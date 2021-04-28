@@ -3,21 +3,33 @@
 #### 介绍
 Java学习技术分享与交流；包含但不限于Spring boot，Linux，vue，数据库，小程序，Android + H5，Git等
 
-#### 软件架构
-软件架构说明
+#### 微信公众号文章
+> 作者的个人微信公众号：**[Java程序员ZZM](docs/wechat-zmzhou-star.png)**
 
+- [设置Redis开机启动](https://mp.weixin.qq.com/s/9DVvr-tfsnhe5EU60Ys2Uw)
+- [Linux安装Redis，Windows安装Redis](https://mp.weixin.qq.com/s/wMD7JsW7nO9MNAfLoS3goQ)
+- [Keepalived + Nginx 实现高可用 Web 负载均衡](https://mp.weixin.qq.com/s/mb2Dpd5iKTkvZd22YoXegQ)
+- [Linux，Windows安装Nginx](https://mp.weixin.qq.com/s/x7JktQH3RIzGeRTQts7Xxg)
+- [设置Nginx开机启动](https://mp.weixin.qq.com/s/EZWVZo5tTXpuUxIjEGXf_A)
+- [Sentinel-dashboard的流控配置持久化到Nacos](https://mp.weixin.qq.com/s/J1pBh1gpqmKqKD0qYdkclg)
+- [Nacos安装](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
 
-#### 安装教程
+#### License
+[The Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+请自由地享受和参与开源
 
-#### 使用说明
+#### 捐赠
+开源不易，请多鼓励！（注：如果该项目对您有帮助，请捐赠以表示支持，谢谢！捐赠请备注learnotes捐赠和称呼哦，谢谢！）
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+| 支付宝 | 微信 |
+| :------------: | :------------: |
+| ![Alipay](docs/alipay.png) | ![Wechat](docs/wechatpay.png) |
+
+#### 联系作者
+email：<a href="mailto:zmzhou-star@foxmail.com">Contact zmzhou-star</a>
+
+微信公众号：![微信公众号](docs/wechat-zmzhou-star.png)
 
 #### 参与贡献
 
