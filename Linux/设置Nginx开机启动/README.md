@@ -1,7 +1,6 @@
 ### **CentOS 7.x以后**
 - **查看nginx的安装目录：`whereis nginx 或者 find / -name nginx`**
 1. 新建nginx.service
-
 `vim /lib/systemd/system/nginx.service`
 ```
 [Unit]
