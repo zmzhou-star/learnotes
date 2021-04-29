@@ -62,7 +62,7 @@ TASKKILL /F /IM nginx.exe /T
 echo "stop ok"
 ```
 - 查看nginx服务状态：`tasklist | findstr /i "nginx.exe"`
-![nginx-status](imgs/nginx-tasklist.png)
+![nginx-tasklist](imgs/nginx-tasklist.png)
 ### Nginx 参考配置
 ```sh
 
