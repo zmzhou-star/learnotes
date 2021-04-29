@@ -4,7 +4,7 @@
 Java学习技术分享与交流；包含但不限于Spring boot，Linux，vue，数据库，小程序，Android + H5，Git等
 
 #### 微信公众号文章
-> 作者的个人微信公众号：**[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)**
+> 作者的个人微信公众号：[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
 
 - [设置Redis开机启动](https://mp.weixin.qq.com/s/9DVvr-tfsnhe5EU60Ys2Uw)
 - [Linux安装Redis，Windows安装Redis](https://mp.weixin.qq.com/s/wMD7JsW7nO9MNAfLoS3goQ)
