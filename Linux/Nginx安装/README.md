@@ -19,7 +19,9 @@
 # sbin/nginx -V
 # sbin/nginx
 ```
-
+[设置Nginx开机启动](../设置Nginx开机启动/README.md)
+- 查看nginx服务状态：`service nginx status`
+![nginx-status](imgs/nginx-status.png)
 ### Windows 压缩包安装Nginx
 - 下载Windows最新稳定版nginx
 1. 解压后在 nginx-1.20.0 目录下新建启动，重启，关闭脚本
@@ -59,13 +61,15 @@ echo "nginx is running, stopping..."
 TASKKILL /F /IM nginx.exe /T
 echo "stop ok"
 ```
-
+- 查看nginx服务状态：`tasklist | findstr /i "nginx.exe"`
+![nginx-status](imgs/nginx-tasklist.png)
 ### Nginx 参考配置
 ```sh
 
 #user  nobody;
-worker_processes  1;
-
+worker_processes  auto;
+#配置Nginx worker进程最大打开文件数
+worker_rlimit_nofile 65535;
 #error_log  logs/error.log;
 #error_log  logs/error.log  notice;
 #error_log  logs/error.log  info;
@@ -74,7 +78,13 @@ worker_processes  1;
 
 
 events {
-    worker_connections  1024;
+    # Linux下多路复用IO接口select/poll的增强版本，使用epoll模式，增加nginx系统并发连接能力
+    use epoll;
+    multi_accept on;
+    worker_connections 20480;
+    #「惊群问题」当一个新连接到达时，如果激活了accept_mutex，那么多个Worker将以串行方式来处理，其中有一个Worker会被唤醒，其他的Worker继续保持休眠状态；
+    # 如果没有激活accept_mutex，那么所有的Worker都会被唤醒，不过只有一个Worker能获取新连接，其它的Worker会重新进入休眠状态
+    accept_mutex on;
 }
 
 
@@ -112,12 +122,17 @@ http {
     proxy_cache_path temp/proxy_cache_path levels=1:2 keys_zone=cache_one:200m inactive=5d max_size=1g;
     proxy_ignore_headers X-Accel-Expires Expires Cache-Control Set-Cookie;
      
+    #FastCGI优点是把动态语言解析和HTTP服务器分离开来
     #针对504错误修改参数
     send_timeout 60;
     fastcgi_buffers 8 128k;
     fastcgi_buffer_size 128k;
     fastcgi_busy_buffers_size 256k;
     fastcgi_temp_file_write_size 256k;
+    #针对504错误 增加超时时间
+    fastcgi_connect_timeout 120;
+    fastcgi_send_timeout 120;
+    fastcgi_read_timeout  120;
     
     #从哪个header头检索出所要的IP地址
     real_ip_header X-Forwarded-For;
@@ -125,6 +140,7 @@ http {
     set_real_ip_from 0.0.0.0/0;
     #递归的去除所配置中的可信IP。排除set_real_ip_from里面出现的IP。如果出现了未出现这些IP段的IP，那么这个IP将被认为是用户的IP。
     real_ip_recursive on;
+    
     #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
     #                  '$status $body_bytes_sent "$http_referer" '
     #                  '"$http_user_agent" "$http_x_forwarded_for"';
@@ -132,7 +148,8 @@ http {
     #access_log  logs/access.log  main;
 
     sendfile        on;
-    #tcp_nopush     on;
+    tcp_nopush      on;
+    tcp_nodelay     on;
 
     #keepalive_timeout  0;
     keepalive_timeout  65;
@@ -143,10 +160,6 @@ http {
         listen       80;
         server_name  localhost;
         
-        #针对504错误 增加超时时间
-        fastcgi_connect_timeout 120;
-        fastcgi_send_timeout 120;
-        fastcgi_read_timeout  120;
         #charset koi8-r;
 
         #access_log  logs/host.access.log  main;
@@ -156,9 +169,9 @@ http {
             index  index.html index.htm;
         }
         
-        location = / {
-          rewrite ^/(.*)$ https://www.baidu.com/$1 break;
-        }
+        #location = / {
+        #  rewrite ^/(.*)$ https://www.baidu.com/$1 break;
+        #}
         # 查看Nginx的一些状态信息
         location /status {
             stub_status;
