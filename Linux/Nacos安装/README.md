@@ -41,11 +41,11 @@ db.password=Zmzhou.V587
 - Windows `nacos/bin` 目录下打开 **CMD** 执行 `startup.cmd -m standalone`
 - Linux `nacos/bin` 目录下执行 `sh startup.sh -m standalone`
 
-![CMD控制台](https://mmbiz.qpic.cn/mmbiz_png/6G40KCUEibc83EJlNZdjQS2ia0qhBD76cEaibVPIGlqRp77zRX3Hwq2kFKctVbMQODFsR1gLTHJAn7xa4AE8PXb2Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![CMD控制台](imgs/nacos-cmd.png)
 
 - 浏览器输入：http://127.0.0.1:8848/nacos
 
-![nacos控制台](https://mmbiz.qpic.cn/mmbiz_png/6G40KCUEibc83EJlNZdjQS2ia0qhBD76cEKNFFGlMMvfIic7hlF1cG9ANKP09JDLEUU7AqfpobicX9DDgAc7YRH8lQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![nacos控制台](imgs/nacos-console.png)
 
 默认用户名密码是：nacos/nacos
 - 参考Nacos官网：[https://nacos.io/zh-cn/docs/deployment.html](https://nacos.io/zh-cn/docs/deployment.html)
