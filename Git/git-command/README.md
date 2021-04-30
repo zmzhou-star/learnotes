@@ -123,6 +123,13 @@ $ git branch -d [branch-name]
 # 删除远程分支
 $ git push origin --delete [branch-name]
 $ git branch -dr [remote/branch]
+# git 清理本地分支，同步远程分支（过滤远程已经删除的分支）
+$ git remote show origin
+$ git remote prune origin
+# 批量删除本地分支
+$ git branch -a | grep -v -E 'master|develop' |grep 'xxx' | xargs git branch -D
+# 批量删除远程分支 grep -v -E 排除master 和 develop -v 排除 -E 使用正则表达式
+$ git branch -r| grep -v -E 'master|develop'|grep 'xxx' | sed 's/origin\///g' | xargs -I {} git push origin :{}
 ```
 > 标签
 ```shell
@@ -238,9 +245,27 @@ $ git stash pop
 # 生成一个可供发布的压缩包
 $ git archive
 ```
+> Git常见报错以及解决办法
+
+- 报错：You do not have permission push to this repository ... The requested URL returned error: 403 执行此命令会在git push时候输入用户名和密码
+；解决办法：`git config --system --unset credential.helper`
+- 报错：OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054 可能是上传大小限制，执行如下命令：
+```shell
+$ git config http.postBuffer 524288000
+$ git config --global http.sslVerify "false"
+```
+- 报错：git: permission denied 
+```shell
+# 先确认ssh-agent处于启用状态：
+$ eval "$(ssh-agent -s)" # ssh-agent -s
+# 输出类似于：
+# Agent pid 32070
+# 然后将SSH key添加到ssh-agent：
+$ ssh-add ~/.ssh/id_rsa
+```  
 > git脑图
 
-![转载自https://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html](https://pic002.cnblogs.com/img/1-2-3/201007/2010072023345292.png)
+![转载自https://www.cnblogs.com/1-2-3/archive/2010/07/18/git-commands.html](imgs/git-command.png)
 
 > 更多命令参考
 - [Gitee-help](https://gitee.com/help/articles/4122)
