@@ -13,7 +13,7 @@ Java学习技术分享与交流；包含但不限于Spring boot，Linux，vue，
 - [设置Nginx开机启动](https://mp.weixin.qq.com/s/EZWVZo5tTXpuUxIjEGXf_A)
 - [Sentinel-dashboard的流控配置持久化到Nacos](https://mp.weixin.qq.com/s/J1pBh1gpqmKqKD0qYdkclg)
 - [Nacos安装](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
-- [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
+- [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/KCxxRyAEusIQ3paTKw2eiw)
 
 #### 文章列表
 - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
@@ -26,7 +26,7 @@ Java学习技术分享与交流；包含但不限于Spring boot，Linux，vue，
 - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
 
 #### License
-[The Apache-2.0 License](https://www.apache.org/licenses/LICENSE-2.0)
+[The Apache-2.0 License](LICENSE)
 
 请自由地享受和参与开源
 
