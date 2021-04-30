@@ -19,7 +19,8 @@
 # sbin/nginx -V
 # sbin/nginx
 ```
-[设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
+
+- [设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
 - 查看nginx服务状态：`service nginx status`
 
 ![nginx-status](imgs/nginx-status.png)
