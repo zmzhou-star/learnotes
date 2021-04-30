@@ -22,17 +22,14 @@ redis> get foo
 2. 添加Redis服务到注册表
 
 ```bat
-rem 安装服务：
-redis-server.exe --service-install redis.windows-service.conf --service-name redis5 --loglevel verbose
-rem 启动服务：
-redis-server.exe --service-start --service-name redis5
-rem 停止服务：
-redis-server.exe --service-stop --service-name redis5
-rem 卸载服务：
-redis-server.exe --service-uninstall --service-name redis5
+安装服务：redis-server.exe --service-install redis.windows-service.conf --service-name redis5 --loglevel verbose
+启动服务：redis-server.exe --service-start --service-name redis5
+停止服务：redis-server.exe --service-stop --service-name redis5
+卸载服务：redis-server.exe --service-uninstall --service-name redis5
 ```
 
 3. 安装服务后 win+r 输入 services.msc 打开服务可以看到 redis5 服务，可以设置开机自启
+
 ![redis5](imgs/redis5.png)
 
 4. Redis可视化工具安装

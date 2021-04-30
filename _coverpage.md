@@ -2,13 +2,20 @@
 
 # learnotes
 
-- Java全栈开发学习笔记，面试突击宝典，主要记录平时学习的一些技术和项目中遇到的问题，微信公众号 **zmzhou-star** 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等如果笔记对您有帮助的话，欢迎star支持，开源不易，请多鼓励！非常感谢~！
+- Java全栈开发学习笔记，面试突击宝典，主要记录平时学习的技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等如果笔记对您有帮助的话，欢迎star支持，开源不易，请多鼓励！非常感谢~！
 
-<a href="https://gitee.com/zmzhou-star/learnotes/stargazers">
+<a href="https://gitee.com/zmzhou-star/learnotes/stargazers" target="_blank">
     <img src="https://gitee.com/zmzhou-star/learnotes/badge/star.svg?theme=dark" alt="star">
 </a>
-<a href="https://gitee.com/zmzhou-star/learnotes/members">
+<a href="https://gitee.com/zmzhou-star/learnotes/members" target="_blank">
     <img src="https://gitee.com/zmzhou-star/learnotes/badge/fork.svg?theme=dark" alt="fork">
+</a>
+
+<a href="https://github.com/zmzhou-star/web-shell/stargazers" target="_blank" rel="noopener">
+    <img src="https://badgen.net/github/stars/zmzhou-star/web-shell?icon=github&color=4ab8a1" alt="stars">
+</a>
+<a href="https://github.com/zmzhou-star/web-shell/members" target="_blank" rel="noopener">
+    <img src="https://badgen.net/github/forks/zmzhou-star/web-shell?icon=github&color=4ab8a1" alt="forks">
 </a>
 
 [Gitee](<https://gitee.com/zmzhou-star/learnotes>)
