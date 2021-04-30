@@ -22,7 +22,7 @@
 [设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
 - 查看nginx服务状态：`service nginx status`
 
-![nginx-status](https://gitee.com/zmzhou-star/learnotes/raw/master/Linux/Nginx%E5%AE%89%E8%A3%85/imgs/nginx-status.png)
+![nginx-status](imgs/nginx-status.png)
 
 ### Windows 压缩包安装Nginx
 - 下载Windows最新稳定版nginx
@@ -65,7 +65,7 @@ echo "nginx is shutdown."
 ```
 - 查看nginx服务状态：`tasklist | findstr /i "nginx.exe"`
 
-![nginx-tasklist](https://gitee.com/zmzhou-star/learnotes/raw/master/Linux/Nginx%E5%AE%89%E8%A3%85/imgs/nginx-tasklist.png)
+![nginx-tasklist](imgs/nginx-tasklist.png)
 ### Nginx 参考配置
 ```sh
 #user  nobody;
