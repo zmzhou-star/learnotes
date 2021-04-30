@@ -2,8 +2,7 @@
 - [Nginx安装](../Nginx安装/README.md)
 - [Redis安装](../../Redis/Redis安装/README.md)
 - [Tomcat下载](https://tomcat.apache.org/download-90.cgi)
-- [作者整理：Tomcat + Redis + Redisson 百度网盘下载](https://pan.baidu.com/s/12vDXvTqWVYn2AYIxTwxq8A)
-  提取码：5bkj
+- [作者整理：Tomcat + Redis + Redisson 百度网盘下载](https://pan.baidu.com/s/12vDXvTqWVYn2AYIxTwxq8A) 提取码：5bkj
 
 #### 配置Nginx负载均衡
 1. 复制两个tomcat，修改端口，一个用8080，另一个用8081，注意第二个要修改sever port
