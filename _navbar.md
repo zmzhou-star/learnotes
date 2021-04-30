@@ -1,4 +1,4 @@
 - [Gitee](https://gitee.com/zmzhou-star/learnotes)
 - [Github](https://github.com/zmzhou-star/learnotes)
 - [笔记文档](https://zmzhou-star.github.io/learnotes/)
-- [公众号`zmzhou-star`](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
+- [公众号 **zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)

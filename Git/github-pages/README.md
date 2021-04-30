@@ -1,26 +1,39 @@
-### 手把手教你配置一个炫酷的GitHub-pages开源项目静态效果演示
 ### docsify：一个神奇的文档网站生成器。 [官网](https://docsify.js.org/#/zh-cn/)
 - docsify 可以快速帮你生成文档网站。不同于 GitBook、Hexo 的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。如果你想要开始使用它，只需要创建一个 index.html 就可以开始编写文档并直接部署在 GitHub Pages。
-1. 全局安装 docsify-cli 工具，可以方便地创建及在本地预览生成的文档。
+### 全局安装 docsify-cli 工具，可以方便地创建及在本地预览生成的文档。
 ```shell
 npm i docsify-cli -g
 ```
-2. 初始化项目
+![](imgs/docsify-npm.png)
+
+### 初始化项目
 ```shell
 docsify init ./docs
 ```
-3. 开始写文档，初始化成功后，可以看到 ./docs 目录下创建的几个文件
+![](imgs/docsify-init.png)
+### 本地预览网站 提供 LiveReload 功能，可以实时的预览。
+```shell
+docsify serve ./docs
+```
+![](imgs/docsify-serve.png)
+
+### 开始写文档，初始化成功后，可以看到 ./docs 目录下创建的几个文件
 - index.html 入口文件
 - README.md 会做为主页内容渲染
 - .nojekyll 用于阻止 GitHub Pages 忽略掉下划线开头的文件
 
-我选择直接复制到 **learnotes** 根目录下
+我选择直接复制到 **learnotes** 根目录下(本仓库只有文档，没有代码)
+### 进入github网站某个项目的`settings > pages`页面，选择一个主题，选择一个分支(不选会默认生成一个`gh-pages`分支，而且这个分支是`orphan`分支，单独一个仓库)
 
-4. 进入github网站某个项目的`settings > pages`页面，选择一个分支(默认会生成一个`gh-pages`分支)，选择一个主题
+![](imgs/branch.png)
+
+- 如果直接合并到master会报错：`Could Not Merge gh-pages: refusing to merge unrelated histories`
+- 解决办法：`git pull origin master –allow-unrelated-histories`
+- [Git常用命令速查手册](/Git/git-command/README.md)
 
 ![](imgs/pages.png)
-   
-5. 切换到`gh-pages`分支，在项目根目录下
+
+### 切换到`gh-pages`分支，在项目根目录下
 - 新建 `_coverpage.md` 自定义封面页
 ```markdown
 <img width="180px" height="180px" style="border-radius: 50%" border="0" src="./docs/favicon.ico" alt="icon">
@@ -139,13 +152,13 @@ docsify init ./docs
 </body>
 </html>
 ```
-- 提交代码
+### 提交代码
 ```shell
 $ git add .
 $ git commit -m "GitHub-pages文档网站配置"
 $ git push origin master
 ```
-- 访问：`https://zmzhou-star.github.io/learnotes` 一个文档网站已经搞定啦，接下来就可以专注写文档了
+### 访问：`https://zmzhou-star.github.io/learnotes` 一个文档网站已经搞定啦，接下来就可以专注写文档了
 
 ![](imgs/learnotes-home.png)
 ![](imgs/learnotes.png)

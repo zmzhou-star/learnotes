@@ -1,4 +1,7 @@
 - [**Java全栈开发学习笔记**](README.md)
+- Git
+  - [手把手教你搭建一个炫酷的GitHub-pages开源项目静态网站](Git/github-pages/README.md)
+  - [Git常用命令速查手册](/Git/git-command/README.md)
 - **Java程序员ZZM**
   - [设置Redis开机启动](https://mp.weixin.qq.com/s/9DVvr-tfsnhe5EU60Ys2Uw)
   - [Linux安装Redis，Windows安装Redis](https://mp.weixin.qq.com/s/wMD7JsW7nO9MNAfLoS3goQ)
