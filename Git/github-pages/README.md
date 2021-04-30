@@ -38,7 +38,7 @@ docsify serve ./docs
 
 ### 切换到`gh-pages`分支，在项目根目录下
 - 新建 `_coverpage.md` 自定义封面页
-```markdown
+```
 <img width="180px" height="180px" style="border-radius: 50%" border="0" src="./docs/favicon.ico" alt="icon">
 # learnotes
 - Java全栈开发学习笔记，面试突击宝典，主要记录平时学习的技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等如果笔记对您有帮助的话，欢迎star支持，开源不易，请多鼓励！非常感谢~！
@@ -60,14 +60,14 @@ docsify serve ./docs
 [开始学习](README.md)
 ```
 - 新建 `_navbar.md` 自定义导航栏
-```markdown
+```
 - [Gitee](https://gitee.com/zmzhou-star/learnotes)
 - [Github](https://github.com/zmzhou-star/learnotes)
 - [笔记文档](https://zmzhou-star.github.io/learnotes/)
 - [公众号`zmzhou-star`](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
 ```
 - 新建 `_sidebar.md` 自定义侧边栏
-```markdown
+```
 - [**Java全栈开发学习笔记**](README.md)
 - **Java程序员ZZM**
   - [设置Redis开机启动](https://mp.weixin.qq.com/s/9DVvr-tfsnhe5EU60Ys2Uw)
