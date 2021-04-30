@@ -1,7 +1,7 @@
 # learnotes
 
 #### 介绍
-Java学习技术分享与交流；包含但不限于Spring boot，Linux，vue，数据库，小程序，Android + H5，Git等
+Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主要记录平时学习的一些技术和项目中遇到的问题，微信公众号 **zmzhou-star** 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等如果笔记对您有帮助的话，欢迎star支持，开源不易，请多鼓励！非常感谢~！
 
 #### 微信公众号文章
 > 作者的个人微信公众号：[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
