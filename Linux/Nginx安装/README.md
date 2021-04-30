@@ -2,11 +2,11 @@
 - 下载稳定版nginx：[http://nginx.org/en/download.html](http://nginx.org/en/download.html)
 - 安装编译工具及依赖库
 `yum -y install gcc gcc-c++ autoconf automake make libtool zlib zlib-devel openssl openssl-devel pcre pcre-devel`
-说明：
-- PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库
-注：pcre-devel是使用pcre开发的一个二次开发库。nginx也需要此库。
-- zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。
-- OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。
+- 说明：
+    - PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库
+    注：pcre-devel是使用pcre开发的一个二次开发库。nginx也需要此库。
+    - zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。
+    - OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。
 ```sh
 # wget http://nginx.org/download/nginx-1.20.0.tar.gz
 # tar -zxvf nginx-1.20.0.tar.gz
@@ -19,9 +19,11 @@
 # sbin/nginx -V
 # sbin/nginx
 ```
-[设置Nginx开机启动](../设置Nginx开机启动/README.md)
+[设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
 - 查看nginx服务状态：`service nginx status`
+
 ![nginx-status](https://gitee.com/zmzhou-star/learnotes/raw/master/Linux/Nginx%E5%AE%89%E8%A3%85/imgs/nginx-status.png)
+
 ### Windows 压缩包安装Nginx
 - 下载Windows最新稳定版nginx
 1. 解压后在 nginx-1.20.0 目录下新建启动，重启，关闭脚本
@@ -52,20 +54,20 @@ rem CHOICE /T 3 /C ync /CS /D y /n
 timeout /nobreak /t 3
 exit
 ```
-- 新建 stop.bat
+- 新建 shutdown.bat
 ```bat
 @echo off
 title "stop nginx"
 tasklist | findstr /i "nginx.exe"
 echo "nginx is running, stopping..."
 TASKKILL /F /IM nginx.exe /T
-echo "stop ok"
+echo "nginx is shutdown."
 ```
 - 查看nginx服务状态：`tasklist | findstr /i "nginx.exe"`
+
 ![nginx-tasklist](https://gitee.com/zmzhou-star/learnotes/raw/master/Linux/Nginx%E5%AE%89%E8%A3%85/imgs/nginx-tasklist.png)
 ### Nginx 参考配置
 ```sh
-
 #user  nobody;
 worker_processes  auto;
 #配置Nginx worker进程最大打开文件数
@@ -73,10 +75,7 @@ worker_rlimit_nofile 65535;
 #error_log  logs/error.log;
 #error_log  logs/error.log  notice;
 #error_log  logs/error.log  info;
-
 #pid        logs/nginx.pid;
-
-
 events {
     # Linux下多路复用IO接口select/poll的增强版本，使用epoll模式，增加nginx系统并发连接能力
     use epoll;
@@ -86,15 +85,12 @@ events {
     # 如果没有激活accept_mutex，那么所有的Worker都会被唤醒，不过只有一个Worker能获取新连接，其它的Worker会重新进入休眠状态
     accept_mutex on;
 }
-
-
 http {
     include       mime.types;
     default_type  application/octet-stream;
     # 隐藏版本号的作用：通过你所用的版本，找其漏洞，进行攻击
     server_tokens off;
     add_header X-Frame-Options SAMEORIGIN;
-     
     gzip  on;
     gzip_min_length 1k;
     gzip_buffers 16 64K;
@@ -121,7 +117,6 @@ http {
     proxy_temp_path temp/proxy_temp_path;
     proxy_cache_path temp/proxy_cache_path levels=1:2 keys_zone=cache_one:200m inactive=5d max_size=1g;
     proxy_ignore_headers X-Accel-Expires Expires Cache-Control Set-Cookie;
-     
     #FastCGI优点是把动态语言解析和HTTP服务器分离开来
     #针对504错误修改参数
     send_timeout 60;
@@ -133,42 +128,31 @@ http {
     fastcgi_connect_timeout 120;
     fastcgi_send_timeout 120;
     fastcgi_read_timeout  120;
-    
     #从哪个header头检索出所要的IP地址
     real_ip_header X-Forwarded-For;
     #真实服务器上一级代理的IP地址或者IP段,可以写多行
     set_real_ip_from 0.0.0.0/0;
     #递归的去除所配置中的可信IP。排除set_real_ip_from里面出现的IP。如果出现了未出现这些IP段的IP，那么这个IP将被认为是用户的IP。
     real_ip_recursive on;
-    
     #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
     #                  '$status $body_bytes_sent "$http_referer" '
     #                  '"$http_user_agent" "$http_x_forwarded_for"';
-
     #access_log  logs/access.log  main;
-
     sendfile        on;
     tcp_nopush      on;
     tcp_nodelay     on;
-
     #keepalive_timeout  0;
     keepalive_timeout  65;
-
     #gzip  on;
-
     server {
         listen       80;
         server_name  localhost;
-        
         #charset koi8-r;
-
         #access_log  logs/host.access.log  main;
-
         location / {
             root   html;
             index  index.html index.htm;
         }
-        
         #location = / {
         #  rewrite ^/(.*)$ https://www.baidu.com/$1 break;
         #}
@@ -177,20 +161,17 @@ http {
             stub_status;
         }
         #error_page  404              /404.html;
-
         # redirect server error pages to the static page /50x.html
         #
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
             root   html;
         }
-
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
         #
         #location ~ \.php$ {
         #    proxy_pass   http://127.0.0.1;
         #}
-
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
         #location ~ \.php$ {
@@ -200,7 +181,6 @@ http {
         #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
         #    include        fastcgi_params;
         #}
-
         # deny access to .htaccess files, if Apache's document root
         # concurs with nginx's one
         #
@@ -208,42 +188,32 @@ http {
         #    deny  all;
         #}
     }
-
-
     # another virtual host using mix of IP-, name-, and port-based configuration
     #
     #server {
     #    listen       8000;
     #    listen       somename:8080;
     #    server_name  somename  alias  another.alias;
-
     #    location / {
     #        root   html;
     #        index  index.html index.htm;
     #    }
     #}
-
-
     # HTTPS server
     #
     #server {
     #    listen       443 ssl;
     #    server_name  localhost;
-
     #    ssl_certificate      cert.pem;
     #    ssl_certificate_key  cert.key;
-
     #    ssl_session_cache    shared:SSL:1m;
     #    ssl_session_timeout  5m;
-
     #    ssl_ciphers  HIGH:!aNULL:!MD5;
     #    ssl_prefer_server_ciphers  on;
-
     #    location / {
     #        root   html;
     #        index  index.html index.htm;
     #    }
     #}
-
 }
 ```

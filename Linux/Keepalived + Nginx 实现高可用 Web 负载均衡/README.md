@@ -25,6 +25,7 @@
 # make
 # make install
 # cd /usr/local/nginx/
+# mkdir temp
 # sbin/nginx -V
 # sbin/nginx
 ```
@@ -48,7 +49,6 @@ cp /usr/local/keepalived/etc/rc.d/init.d/keepalived /etc/init.d/
 cp /usr/local/keepalived/etc/sysconfig/keepalived /etc/sysconfig/
 #将keepalived主程序软连接到环境变量/usr/sbin/目录下
 ln -s /usr/local/sbin/keepalived /usr/sbin/
-
 #设置 keepalived 服务开机启动
 chkconfig keepalived on
 #启动keepalived
@@ -57,12 +57,12 @@ service keepalived start
 service keepalived stop
 #查看服务状态
 service keepalived status
-
 #防火墙要放开vrrp组播包通信
 firewall-cmd --direct --permanent --add-rule ipv4 filter INPUT 0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
 firewall-cmd --direct --permanent --add-rule ipv4 filter OUTPUT 0 --destination 224.0.0.18 --protocol vrrp -j ACCEPT
 firewall-cmd --reload
 ```
+
 2. 修改 Keepalived 配置文件
 ```sh
 cd /etc/keepalived
@@ -169,7 +169,7 @@ yum -y install perl-CPAN
 cpan Net::SMTP_auth
 vi send_mail.sh
 chmod +x /etc/keepalived/send_mail.sh
-
+# send_mail脚本如下：
 #!/usr/bin/perl -w
 use Net::SMTP_auth;
 use strict;
@@ -218,6 +218,7 @@ service keepalived start
 ip addr show ens33
 ```
 ![nginx-master](imgs/nginx-master.png)
+
 - 测试关闭nginx服务 keepalived 是否会重启nginx
 ```sh
 service nginx stop
@@ -230,5 +231,7 @@ service nginx stop
 service keepalived stop
 ```
 此时会收到备 keepalived 发送的邮件，再通过VIP(192.168.163.6)访问应该是192.168.163.8
+
 ![nginx-backup](imgs/nginx-backup.png)
+
 至此，**Keepalived + Nginx 实现高可用 Web 负载均衡**搭建完毕。

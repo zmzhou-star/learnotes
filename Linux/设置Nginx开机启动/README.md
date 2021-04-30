@@ -7,17 +7,18 @@
 Description=nginx service
 Documentation=http://nginx.org/
 After=network.target
-
+#
 [Service]
 Type=forking
 ExecStart=/usr/local/nginx/sbin/nginx
 ExecReload=/usr/local/nginx/sbin/nginx -s reload
 ExecStop=/usr/local/nginx/sbin/nginx -s quit
 PrivateTmp=true
-
+#
 [Install]
 WantedBy=multi-user.target
 ```
+
 ### 参数说明
 |[Unit]|服务的说明|
 | :---------: | :---------: |

@@ -11,11 +11,11 @@
     <img src="https://gitee.com/zmzhou-star/learnotes/badge/fork.svg?theme=dark" alt="fork">
 </a>
 
-<a href="https://github.com/zmzhou-star/web-shell/stargazers" target="_blank" rel="noopener">
-    <img src="https://badgen.net/github/stars/zmzhou-star/web-shell?icon=github&color=4ab8a1" alt="stars">
+<a href="https://github.com/zmzhou-star/learnotes/stargazers" target="_blank" rel="noopener">
+    <img src="https://badgen.net/github/stars/zmzhou-star/learnotes?icon=github&color=4ab8a1" alt="stars">
 </a>
-<a href="https://github.com/zmzhou-star/web-shell/members" target="_blank" rel="noopener">
-    <img src="https://badgen.net/github/forks/zmzhou-star/web-shell?icon=github&color=4ab8a1" alt="forks">
+<a href="https://github.com/zmzhou-star/learnotes/members" target="_blank" rel="noopener">
+    <img src="https://badgen.net/github/forks/zmzhou-star/learnotes?icon=github&color=4ab8a1" alt="forks">
 </a>
 
 [Gitee](<https://gitee.com/zmzhou-star/learnotes>)
