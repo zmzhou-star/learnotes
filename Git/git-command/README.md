@@ -62,7 +62,7 @@ $ git clone https://gitee.com/zmzhou-star/learnotes.git
 ```shell
 git remote set-url origin https://github.com/zmzhou-star/learnotes.git
 ```
-> 提交代码
+> 增加/删除文件
 ```shell
 $ git add . #将当前目录所有文件添加到git暂存区
 $ git commit -m "my first commit" #提交并备注提交信息
