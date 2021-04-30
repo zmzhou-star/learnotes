@@ -8,7 +8,8 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">
+    <!--黑暗主题-->
+    <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">-->
 </head>
 <body>
 <div id="app"></div>
@@ -25,11 +26,11 @@
         loadNavbar: '_navbar.md', // 设置导航栏
         auto2top: true, //切换页面后是否自动跳转到页面顶部
         subMaxLevel: 3, //侧边栏显示当前页面的目录(标题)
-        // 完整配置参数
+        // 搜索配置参数
         search: {
             placeholder: '搜索关键字', // 搜索提示框文字， 支持本地化，例子在下面
             noData: '找不到结果!',
-            depth: 3,                       // 搜索标题的最大程级, 1 - 6
+            depth: 3,                // 搜索标题的最大程级, 1 - 6
         },
         count:{
           countable:true,
@@ -46,7 +47,6 @@
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 <!--Disqus评论系统支持-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
-
 <!-- 添加一键拷贝代码-->
 <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 <!--docsify的分页导航插件-->
