@@ -1,0 +1,5 @@
+[0428/164720:INFO:http_cache_transaction.cc(72)] IgnoreZeroCacheError: 0
+[0428/164728:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0428/171253:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0428/182657:WARNING:dns_config_service_win.cc(674)] Failed to read DnsConfig.
+[0428/182658:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.
