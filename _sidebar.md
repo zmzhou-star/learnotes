@@ -17,6 +17,6 @@
   - [Keepalived + Nginx 实现高可用 Web 负载均衡](Linux/Keepalived%20+%20Nginx%20实现高可用%20Web%20负载均衡/README.md)
   - [Linux，Windows安装Nginx](Linux/Nginx安装/README.md)
   - [设置Nginx开机启动](Linux/设置Nginx开机启动/README.md)
-  - [Sentinel-dashboard的流控配置持久化到Nacos](Linux/Sentinel-dashboard的流量控制配置持久化到Nacos-推模式)
+  - [Sentinel-dashboard的流控配置持久化到Nacos](Linux/Sentinel-dashboard的流量控制配置持久化到Nacos-推模式/README.md)
   - [Nacos安装](Linux/Nacos安装/README.md)
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
