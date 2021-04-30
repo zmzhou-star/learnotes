@@ -1,4 +1,4 @@
-## 修改redis.conf配置文件中的两项配置
+### 修改redis.conf配置文件中的两项配置
 - daemonize yes # 以守护进程方式启动
 - supervised systemd # 可以跟systemd进程进行交互
 ```sh
@@ -12,34 +12,37 @@ logfile "/usr/loacl/redis-6.0.10/logs/redis_6379.log"
 appendonly yes #开启日志形式
 requirepass 123456 #密码
 ```
-### **CentOS 7.x以后**
+
+### CentOS 7.x以后 设置Redis开机启动
 1. 新建redis.service
 `vim /lib/systemd/system/redis.service`
-```
+```shell
 [Unit]
 Description=Redis In-Memory Data Store
 Documentation=https://redis.io/
 After=network.target
-
+#
 [Service]
 Type=forking
 ExecStart=/usr/loacl/redis-6.0.10/src/redis-server /usr/loacl/redis-6.0.10/redis.conf
 ExecStop=/usr/loacl/redis-6.0.10/src/redis-cli shutdown
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=always
-
+#
 [Install]
 WantedBy=multi-user.target
 ```
+
 #### 参数说明
+
 |[Unit]|服务的说明|
-| --- | --- |
+| :---: | :---: |
 |Description|描述服务|
 |After|在network.target启动后才启动|
 |Documentation|官网(可选)|
 
 |[Service]|服务运行参数的设置|
-| --- | --- |
+| :---: | :---: |
 |Type=forking|后台运行|
 |ExecStart|服务的具体运行命令|
 |ExecReload|服务的重启命令|
@@ -47,7 +50,7 @@ WantedBy=multi-user.target
 |Restart|fail时重启|
 
 |[Install]|运行级别的设置|
-| --- | --- |
+| :---: | :---: |
 |WantedBy|多用户模式|
 |Alias|服务别名(可选)|
 
@@ -60,7 +63,8 @@ WantedBy=multi-user.target
 - 查看所有已启动的服务：systemctl list-units --type=service
 - 查看服务当前状态：systemctl status redis
 
-### **CentOS 7.x以前**
+### CentOS 7.x以前 设置Redis开机启动
+
 1. 复制redis启动脚本(redis安装包中包含自启动脚本)
 ```sh
 # cp /usr/loacl/redis-6.0.10/utils/redis_init_script /etc/init.d/redis
@@ -69,7 +73,9 @@ WantedBy=multi-user.target
 # chkconfig: 2345 10 90  # 注册开机启动的运行级别 2345是默认启动级别 10代表Start的顺序，90代表Kill（Stop）的顺序
 # description: Start and Stop redis 
 ```
-#### Linux一般会有7个运行级别：
+
+> Linux一般会有7个运行级别：
+
 - 0 - 停机
 - 1 - 单用户模式
 - 2 - 多用户，但是没有NFS ，不能使用网络
@@ -84,10 +90,10 @@ WantedBy=multi-user.target
 REDISPORT=6379
 EXEC=/usr/loacl/redis-6.0.10/src/redis-server
 CLIEXEC=/usr/loacl/redis-6.0.10/src/redis-cli
-
 PIDFILE=/var/run/redis_${REDISPORT}.pid
 CONF="/usr/loacl/redis-6.0.10/redis.conf"
 ```
+
 3. 启动redis
 - 启动redis命令:service redis start
 - 关闭redis命令:service redis stop
