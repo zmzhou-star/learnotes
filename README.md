@@ -1,7 +1,7 @@
 # learnotes
 
 ## 介绍
-Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主要记录平时学习的一些技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等。如果笔记对您有帮助的话，欢迎star支持，开源不易，请多鼓励！非常感谢~！
+Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主要记录平时学习的一些技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等。如果笔记对您有帮助的话，欢迎star支持，开源不易请多鼓励！非常感谢~！
 
 ## 微信公众号文章
 > 作者的个人微信公众号：[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 关注我不迷路
@@ -16,24 +16,15 @@ Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主�
 - [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/KCxxRyAEusIQ3paTKw2eiw)
 
 ## 文章列表
-- [手把手教你搭建一个炫酷的GitHub-pages开源项目静态网站](Git/github-pages/README.md)
-- [Git常用命令速查手册](/Git/git-command/README.md)
-- [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
-- [Linux安装Redis，Windows安装Redis](Redis/Redis安装/README.md)
-- [Keepalived + Nginx 实现高可用 Web 负载均衡](Linux/Keepalived%20+%20Nginx%20实现高可用%20Web%20负载均衡/README.md)
-- [Linux，Windows安装Nginx](Linux/Nginx安装/README.md)
-- [设置Nginx开机启动](Linux/设置Nginx开机启动/README.md)
-- [Sentinel-dashboard的流控配置持久化到Nacos](Linux/Sentinel-dashboard的流量控制配置持久化到Nacos-推模式/README.md)
-- [Nacos安装](Linux/Nacos安装/README.md)
-- [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
+[文章列表](_sidebar.md ':include :type=markdown')
 
 ## License
-[The Apache-2.0 License](LICENSE)
+[The Apache-2.0 License](LICENSE ':ignore')
 
 请自由地享受和参与开源
 
 ## 捐赠
-开源不易，请多鼓励！（注：如果该项目对您有帮助，请捐赠以表示支持，谢谢！捐赠请备注learnotes捐赠和称呼哦，谢谢！）
+开源不易，请多鼓励！（注：如果该项目对您有帮助，请捐赠以表示支持，谢谢！捐赠请备注 learnotes 捐赠和称呼哦，谢谢！）
 
 | 支付宝 | 微信 |
 | :------------: | :------------: |

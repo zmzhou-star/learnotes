@@ -2,7 +2,7 @@
 
 # learnotes
 
-- Java全栈开发学习笔记，面试突击宝典，主要记录平时学习的技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Java，Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等。如果笔记对您有帮助的话，欢迎star支持，开源不易请多鼓励！非常感谢~！
+- Java全栈开发学习笔记，面试突击宝典，主要记录平时学习的技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等。如果笔记对您有帮助的话，欢迎star支持，开源不易请多鼓励！非常感谢~！
 
 <a href="https://gitee.com/zmzhou-star/learnotes/stargazers" target="_blank">
     <img src="https://gitee.com/zmzhou-star/learnotes/badge/star.svg?theme=dark" alt="star">

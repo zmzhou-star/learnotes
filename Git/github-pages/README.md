@@ -25,7 +25,7 @@ docsify serve ./docs
 - README.md 会做为主页内容渲染
 - .nojekyll 用于阻止 GitHub Pages 忽略掉下划线开头的文件
 
-我选择直接复制到 **learnotes** 根目录下(本仓库只有文档，没有代码)
+我选择直接复制到 **learnotes** 根目录下(本仓库主要是文档)
 ### 进入github网站某个项目的`settings > pages`页面，选择一个主题，选择一个分支(不选会默认生成一个`gh-pages`分支，而且这个分支是`orphan`分支，单独一个仓库)
 
 ![](imgs/branch.png)
@@ -161,7 +161,7 @@ $ git add .
 $ git commit -m "GitHub-pages文档网站配置"
 $ git push origin master
 ```
-### 访问：`https://zmzhou-star.github.io/learnotes` 一个文档网站已经搞定啦，接下来就可以专注写文档了
+### 访问：[https://zmzhou-star.github.io/learnotes](https://zmzhou-star.github.io/learnotes) 一个文档网站已经搞定啦，接下来就可以专注写文档了
 
 ![](imgs/learnotes-home.png)
 ![](imgs/learnotes.png)
