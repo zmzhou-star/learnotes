@@ -25,5 +25,5 @@
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
 
 - 面试题(算法题)
-  - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':type=code :ignore')
-  - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':ignore')
+  - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
+  - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
