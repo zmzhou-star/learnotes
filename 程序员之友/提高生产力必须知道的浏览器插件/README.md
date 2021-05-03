@@ -1,0 +1,43 @@
+### 谷歌插件官网地址 [https://chrome.google.com/webstore/category/extensions?hl=zh-CN](https://chrome.google.com/webstore/category/extensions?hl=zh-CN)
+- 谷歌访问助手：最简单易用的谷歌访问助手
+  - 为chrome扩展用户量身打造。可以解决chrome扩展无法自动更新的问题，同时可以访问谷歌google搜索，gmail邮箱，google+等谷歌服务。
+  - 下载链接：[https://pan.baidu.com/s/1ow7yF77j_5Hp44oVc4w8yQ](https://pan.baidu.com/s/1ow7yF77j_5Hp44oVc4w8yQ)  提取码：0fds
+- ColorZilla：拾色器
+  - 先进的吸管，拾色器，渐变生成器和其他彩色糖果
+  - Advanced Eyedropper, Color Picker, Gradient Generator and other colorful goodies
+- CSSViewer
+  - A simple CSS property viewer.
+- GitHub加速
+  - 国内Github下载很慢，用上了这个插件后，下载速度嗖嗖嗖的~！
+- Simple Allow Copy
+  - 以后再也不用怕各种网站的复制限制了，全网内容手到擒来
+- GraphiTabs： 标签管理
+  - 能够将所有打开的网页一键整理成思维导图模式。
+- OneTab：将无数Tab合并在一个页面（better-onetab：一个更好的 OneTab 扩展）
+  - 经常同时打开多个网页标签？切换来切换去弄得眼花缭乱，而且容易出现电脑卡顿。「OneTab」能帮你解决这个困扰，下载安装后只需要点击这个插件，就能够把所有标签集合为一个标签。不仅瞬间让你浏览器整洁无暇，还能节省 95% 的内存！
+- 简 Tab (SimpTab) - 新标签页
+  - 极简的 Chrome 新标签页扩展，望你每次打开都有好心情。
+- Infinity 新标签页
+  - 自由添加网站图标，云端高清壁纸，快速访问书签、天气、笔记、待办事项、扩展管理与历史记录。
+- FireShot：捕捉网页截图
+  - 捕捉网页截图（捕捉整个页面，捕捉可见部分，捕捉选定区域），编辑并将它们保存为PDF，JPEG，GIF，PNG或BMP；上传，打印，在Photoshop中打开，复制到剪贴板或电子邮件
+- AdBlock：屏蔽不喜欢的一切的
+  - 可以帮助你屏蔽几乎大部分网页广告，如果存在漏网之鱼，还可以手动添加到屏蔽列，还你一个干净的网络环境。
+- Video Speed Controller：视频加速播放
+  - 强制加速、减速、快进、倒退所有视频包括广告。她是通过加速的方式快速过掉广告。
+- Clear Cache：一键清除浏览器缓存
+- Evernote Web Clipper：使用Evernote扩展程序一键保存精彩网页内容到Evernote帐户。（印象笔记）
+- Tampermonkey：Chrome里的“金手指”
+  - 方便的脚本管理、脚本概览、设置多样性、脚本自动更新、安全、兼容性、Chrome 同步、CodeMirror 编辑器、JSHint 语法检查、快速开发、卸载等功能。
+- IE Tab：内嵌一个IE内核浏览器，用chrome也能访问一些IE才能访问的网站
+- Vue.js devtools
+  - Chrome and Firefox DevTools extension for debugging Vue.js applications.
+- 图片助手(ImageAssistant) 批量图片下载器
+  - 一款用于嗅探、分析网页图片并提供批量下载等功能及在线收藏、检索、分享服务的浏览器扩展程序。
+- 联图二维码-极速二维码生成器
+  - 联图二维码是一个免费二维码生成器，可以轻松将网址、网页上选中的文本信息生成对应的二维码图片，实现电脑与手机之间信息的无缝共享。
+
+### edge插件下载地址 [https://microsoftedge.microsoft.com/addons?hl=zh-CN](https://microsoftedge.microsoft.com/addons?hl=zh-CN)
+允许来自其他应用商店的扩展。所以上面的插件几乎都可以用
+- iGG谷歌访问助手
+  - 永久免费提供谷歌搜索，gmail，Chrome Store,Android/Golang等谷歌产品加速访问.
