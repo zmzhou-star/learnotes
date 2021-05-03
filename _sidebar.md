@@ -32,6 +32,10 @@
   - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
   - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
 
+- 程序员之友-提高生产力
+  - [提高生产力必须知道的网站](程序员之友/提高生产力必须知道的网站/README.md)
+  - [提高生产力必须知道的浏览器插件](程序员之友/提高生产力必须知道的浏览器插件/README.md)
+  
 - 其他
   - [教你一行代码破解邻居家WiFi](Others/教你一行代码破解邻居家WiFi/README.md)
   - [怎么让你的U盘不再中毒？](Others/怎么让你的U盘不再中毒/README.md)
