@@ -34,4 +34,4 @@
 
 - 其他
   - [教你一行代码破解邻居家WiFi](Others/教你一行代码破解邻居家WiFi/README.md)
-  - [怎么让你的U盘不再中毒？](Others/怎么让你的U盘不再中毒)
+  - [怎么让你的U盘不再中毒？](Others/怎么让你的U盘不再中毒/README.md)

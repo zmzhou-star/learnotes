@@ -1,6 +1,12 @@
-> 第一步：win+R输入cmd
+> 第一步：快捷键 `win+r` 输入 `cmd`
 
-> 第二步：输入 `netsh wlan show profiles`
+![](imgs/cmd.png)
+
+> 或者在文件资源管理器输入 `cmd`
+
+![](imgs/cmd2.png)
+
+> 第二步：输入 `netsh wlan show profiles` 显示所有WiFi列表
 
 ![](imgs/step1.png)
 

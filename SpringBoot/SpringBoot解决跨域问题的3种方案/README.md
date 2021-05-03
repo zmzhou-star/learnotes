@@ -31,10 +31,10 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 ```
 - "预检"请求用的请求方法是OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
 - 除了Origin字段，"预检"请求的头信息包括两个特殊字段。
-1. Access-Control-Request-Method
-- 该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是PUT。
-2. Access-Control-Request-Headers
-- 该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是X-Custom-Header。
+  - `Access-Control-Request-Method`
+  - 该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是PUT。
+  - `Access-Control-Request-Headers`
+  - 该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是X-Custom-Header。
 ### 两种请求
 - 浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。
 > 只要同时满足以下两大条件，就属于简单请求。
@@ -82,15 +82,15 @@ public class EasyWebMvcConfigurer implements WebMvcConfigurer {
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-		    // Add more mappings... 可以添加多个mapping
+    	  // Add more mappings... 可以添加多个mapping
         registry.addMapping("/**")
-				    // 服务器支持的所有头信息字段
+            // 服务器支持的所有头信息字段
             .allowedHeaders("*")
-				    // 服务器支持的所有跨域请求的方法
+            // 服务器支持的所有跨域请求的方法
             .allowedMethods("POST", "GET", "PUT", "DELETE", "OPTIONS", "HEAD")
             // 是否允许发送Cookie
             .allowCredentials(true)
-				    // 指定本次预检请求的有效期
+            // 指定本次请求的有效期
             .maxAge(1800)
             // 设置允许跨域请求的域名
             .allowedOriginPatterns("*");
@@ -122,7 +122,7 @@ public class MyCorsFilter implements Filter {
     response.setHeader("Access-Control-Allow-Credentials", "true");
     // 服务器支持的所有跨域请求的方法
     response.setHeader("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS,HEAD");
-    // 指定本次预检请求的有效期
+    // 指定本次请求的有效期
     response.setHeader("Access-Control-Max-Age", "1800");
     // 服务器支持的所有头信息字段
     response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With," +
@@ -156,7 +156,7 @@ public class EasyWebMvcConfigurer {
   }
 }
 ```
-#### 方法三：@CrossOrigin 注解，可以放在method、class上面
+#### 方法三：**@CrossOrigin** 注解，可以放在 **method** 或者 **class** 上面
 ```java
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
