@@ -98,7 +98,7 @@ public class EasyWebMvcConfigurer implements WebMvcConfigurer {
 }
 ```
 ![](imgs/mode1.png)
-#### 方法二：基于过滤器 这种方式很容易理解，就是在每个response中写入 Access-Control-* 这些响应头
+#### 方法二：基于过滤器 这种方式很容易理解，就是在每个请求的response中写入 Access-Control-* 这些响应头
 ```java
 import java.io.IOException;
 import javax.servlet.Filter;
