@@ -24,33 +24,30 @@ public class LongestCommonStr {
 		String line;
 		System.out.println("输入两个字符串：");
 		while (!"".equals(line = br.readLine())) {
+			// 排序
 			Object[] arr = Arrays.stream(line.split("\\s+"))
-					.sorted((Comparator.comparingInt(String::length))).toArray();
+				.sorted((Comparator.comparingInt(String::length))).toArray();
+			// 长的放第一个
 			String first = arr[1].toString();
 			String second = arr[0].toString();
-			int result = 0;
-			result = maxStr(first, second, 0, result);
+			int result = maxStr(first, second);
 			System.out.println(result);
 		}
 	}
 
-	private static int maxStr(String first, String second, int n, int result) {
-		if (first.equals(second)) {
-			return second.length();
-		}
-		if (n >= first.length()) {
-			return result;
-		}
-		int p = Math.max(0, second.indexOf(first.charAt(n)));
-		for (int i = n; i < first.length(); i++) {
-			if (p < second.length() && first.charAt(i) == second.charAt(p)) {
-				p += 1;
-			} else {
-				result = Math.max(result, p);
-				n += 1;
-				result = Math.max(result, maxStr(first, second, n, result));
+	private static int maxStr(String max, String min) {
+		String target;
+		//最外层：min子串的长度，从最大长度开始
+		for (int i = min.length(); i >= 1; i--) {
+			//遍历长度为i的min子串，从0开始
+			for (int j = 0; j <= min.length() - i; j++) {
+				target = min.substring(j, j + i);
+				// max串含有字串，则输出最大长度
+				if (max.contains(target)){
+					return target.length();
+				}
 			}
 		}
-		return result;
+		return 0;
 	}
 }
