@@ -56,6 +56,7 @@ class TestController {
 
 4.  测试：启动两个或以上服务，端口分别为8080，8081……
 - 分别调用：`http://127.0.0.1:8080/getSessionId`,`http://127.0.0.1:8081/getSessionId`
+
 ![8080](imgs/8080.png)
 ![8081](imgs/8081.png)
 ![](imgs/redis-keys.png) 
