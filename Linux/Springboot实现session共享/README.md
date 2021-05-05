@@ -25,7 +25,7 @@ spring.redis.password=Redis.127
 # session存储类型使用redis
 spring.session.store-type=redis
 ```
-3.  启动类添加 **@EnableRedisHttpSession** 注解，如下
+3.  启动类添加 **@EnableRedisHttpSession** 注解，如下：
 ```java
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.boot.SpringApplication;
