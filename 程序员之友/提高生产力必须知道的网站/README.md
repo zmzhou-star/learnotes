@@ -20,7 +20,7 @@
     |9|是|否|
     |10|是|否|
     |11-16|否|是|
-  - 虽然OTN协议版本JDK也支持Personal Use,Development Use，但是如果我们在做公司项目的时候生产上用了，这样就导致了商用项目未经许可违规使用。Oracle法务部可不是吃素的，所以我们养成良好的习惯，避免不必要的麻烦。
+  - 虽然OTN协议版本JDK也支持Personal Use,Development Use，但是如果我们在做公司项目的时候生产上用了，这样就导致了商用项目未经许可违规使用。Oracle法务部可不是吃素的，所以我们开发过程中就养成良好的习惯，避免不必要的麻烦。
 - 站长之家 [http://tool.chinaz.com/](http://tool.chinaz.com/)
 - sojson-在线工具 [https://www.sojson.com/](https://www.sojson.com/)
 - JavaScript加密、压缩 [https://www.jsjiami.com/](https://www.jsjiami.com/)
