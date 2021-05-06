@@ -1,5 +1,6 @@
 - 先回顾一下 [tomcat+redis+Redisson实现session共享](/Linux/tomcat+redis+Redisson实现session共享/README.md)
 - 今天介绍一下spring boot + redis实现session共享
+- 应用场景：Nginx负载均衡时session信息共享
 1.  pom 需要引入 redis 和 session 的依赖
 ```xml
 <dependency>
