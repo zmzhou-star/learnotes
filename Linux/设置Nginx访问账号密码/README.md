@@ -27,7 +27,16 @@ yum install httpd-tools -y
 |-D|从认证文件中删除用户记录|
 
 - 实例
-
+```shell
+cd /usr/local/nginx/conf/
+htpasswd -c htpasswd.users admin
+htpasswd -s htpasswd.users guest
+htpasswd -d htpasswd.users test
+htpasswd -D htpasswd.users test
+htpasswd -b htpasswd.users test 123456
+cat htpasswd.users
+htpasswd -nb test 123456
+```
 ![](imgs/htpasswd.png)
 
 ### 配置 nginx 反向代理 kibana，并登录验证
@@ -38,7 +47,7 @@ server{
     server_name 127.0.0.1 zmzhou-star;
     location / {
         auth_basic           "Please input password";
-        auth_basic_user_file /usr/local/nginx/htpasswd.users;
+        auth_basic_user_file /usr/local/nginx/conf/htpasswd.users;
         proxy_pass           http://127.0.0.1:5601;
     }
     error_page  404    /404.html;
