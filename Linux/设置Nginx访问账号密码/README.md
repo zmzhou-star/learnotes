@@ -26,7 +26,7 @@ yum install httpd-tools -y
 |-p|使用文本密码，不加密|
 |-D|从认证文件中删除用户记录|
 
-- 实例
+- 操作实例
 ```shell
 cd /usr/local/nginx/conf/
 htpasswd -c htpasswd.users admin
