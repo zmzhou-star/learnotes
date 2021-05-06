@@ -52,7 +52,7 @@ server{
     }
     error_page  404    /404.html;
     location = /404.html {
-        root   /usr/nginx/nginx/html;
+        root   /usr/local/nginx/html;
     }
 }
 ```
