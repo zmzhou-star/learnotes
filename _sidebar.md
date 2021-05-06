@@ -24,12 +24,14 @@
   - [Keepalived + Nginx 实现高可用 Web 负载均衡](Linux/Keepalived%20+%20Nginx%20实现高可用%20Web%20负载均衡/README.md)
   - [Linux，Windows安装Nginx](Linux/Nginx安装/README.md)
   - [设置Nginx开机启动](Linux/设置Nginx开机启动/README.md)
-  - [设置Nginx反向代码账号密码访问](Linux/设置Nginx访问账号密码/README.md)
+  - [设置Nginx反向代理账号密码访问](Linux/设置Nginx访问账号密码/README.md)
   - [Sentinel-dashboard的流控配置持久化到Nacos](Linux/Sentinel-dashboard的流量控制配置持久化到Nacos-推模式/README.md)
   - [Nacos安装](Linux/Nacos安装/README.md)
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
   - [springboot+redis实现session共享](Linux/Springboot实现session共享/README.md)
-
+- MQ
+  - [新一代消息中间件-Pulsar](/MQ/新一代消息中间件-Pulsar/README.md)
+  
 - 面试题(算法题)
   - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
   - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
