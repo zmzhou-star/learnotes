@@ -43,3 +43,4 @@
 - 其他
   - [教你一行代码破解邻居家WiFi](Others/教你一行代码破解邻居家WiFi/README.md)
   - [怎么让你的U盘不再中毒？](Others/怎么让你的U盘不再中毒/README.md)
+  - [Windows快捷键](/Others/Windows快捷键/README.md)
