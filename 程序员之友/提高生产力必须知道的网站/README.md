@@ -1,5 +1,9 @@
 - 阿里云-知行动手实验室 [https://start.aliyun.com/](https://start.aliyun.com/)
 - Spring Initializr [https://start.spring.io/](https://start.spring.io/)
+- spring boot文档 [https://docs.spring.io/spring-boot/docs/2.4.5/](https://docs.spring.io/spring-boot/docs/2.4.5/)
+  - 文档分为5个部分，分别是 actuator-api/，api/ ，gradle-plugin/，maven-plugin/，reference/，如图所示：
+  ![](imgs/springboot-doc.png)
+  - 主要文档是reference部分，maven配置技巧是maven-plugin部分
 - maven仓库 [http://mvnrepository.com/](http://mvnrepository.com/)
 - 阿里云云效 Maven中央仓库 [https://maven.aliyun.com/mvn/guide](https://maven.aliyun.com/mvn/guide)
 - 开源中国-在线工具 [https://tool.oschina.net/](https://tool.oschina.net/)
