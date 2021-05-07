@@ -11,6 +11,13 @@
     - 由轻量级的 serverless 计算框架 Pulsar Functions 实现流原生的数据处理。
   - 基于 Pulsar Functions 的 serverless connector 框架 Pulsar IO 使得数据更易移入、移出 Apache Pulsar。
   - 分层式存储可在数据陈旧时，将数据从热存储卸载到冷/长期存储（如S3、GCS）中。
+### Pulsar 消息发送架构图
+> 处理一个 producer 和一个订阅 consumer 的分块消息
+
+![](imgs/message-architecture1.png)
+> 处理多个 producer 和一个订阅 consumer 的分块消息
+
+![](imgs/message-architecture2.png)
 ### 单机安装 Pulsar
 - 下载二进制安装包：[https://archive.apache.org/dist/pulsar/pulsar-2.7.1/apache-pulsar-2.7.1-bin.tar.gz](https://archive.apache.org/dist/pulsar/pulsar-2.7.1/apache-pulsar-2.7.1-bin.tar.gz)
 ```shell
