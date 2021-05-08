@@ -53,4 +53,5 @@
 - CSS 教程手册  [https://www.css88.com/book/css/](https://www.css88.com/book/css/)
 - 免费在线作图、实时协作 [https://v3.processon.com/](https://v3.processon.com/)
 - Node.js 中文网 [http://nodejs.cn/](http://nodejs.cn/)
+- HTML5+中国产业联盟 [https://www.html5plus.org/doc/jsdocp.html](https://www.html5plus.org/doc/jsdocp.html)
 - 格式工厂 [http://www.pcgeshi.com/](http://www.pcgeshi.com/)
