@@ -2,6 +2,7 @@
 - Git
   - [手把手教你搭建一个炫酷的GitHub-pages开源项目静态网站](Git/github-pages/README.md)
   - [Git常用命令速查手册](/Git/git-command/README.md)
+  - [GitHub Actions](/Git/GitHub-Actions/README.md)
   
 - SpringBoot
   - [Spring Boot前后端分离项目解决跨域问题的3种方案](SpringBoot/SpringBoot解决跨域问题的3种方案/README.md)
