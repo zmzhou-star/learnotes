@@ -21,3 +21,14 @@
 | odbcad32|ODBC数据源管理器|
 | dfrg.msc| 磁盘碎片整理程序|
 | charmap | 启动字符映射表|
+
+- 关机命令 shutdown 的使用技巧：
+  - 用法: shutdown [/i | /l | /s | /sg | /r | /g | /a | /p | /h | /e | /o] [/hybrid] [/soft] [/fw] [/f]
+  [/m \\computer][/t xxx][/d [p|u:]xx:yy [/c "comment"]]
+    
+  - 立即关机：`shutdown -s -t 0`
+  - 10秒后关机并提示：`shutdown -s -t 10 -c "The computer will shut down in 10 seconds"`
+  - 定时关机，比如12点关机：`at 12:00 shutdown -s`
+  - 取消自动关机,在运行中输入：`shutdown -a`
+  - 关机重启：`shutdown -r`
+  - at命令使用条件：必须开启Task scheduler服务（开启的方法在命令界面输入 `net start schedule` ，关闭输入`net stop schedule`）
