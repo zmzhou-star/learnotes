@@ -1,11 +1,11 @@
-### GitHub Action 是 GitHub 于 2019 年 11 月正式推出的一个 CI\CD 服务。
+### GitHub Action 是 GitHub 于 2019 年 11 月正式推出的一个 CI/CD 服务。
 ### GitHub Action 基本概念
 - workflow （工作流程）：持续集成一次运行的过程，就是一个 workflow。
 - job （任务）：一个 workflow 由一个或多个 jobs 构成，含义是一次持续集成的运行，可以完成多个任务。
 - step（步骤）：每个 job 由多个 step 构成，一步步完成。
 - action （动作）：每个 step 可以依次执行一个或多个命令（action）。
 
-### CI\CD 其实是三件事情
+### CI/CD 其实是三件事情
 - 持续集成（Continuous Integration）
 - 持续交付（Continuous Delivery）
 - 持续部署（Continuous Deployment）
@@ -75,5 +75,7 @@
 - 发布成功后就出现如下下载页面
 
 ![](imgs/maven-publish-success.png)
+
+我们下载下来之后可以执行命令：`java -jar -server web-shell-1.0.jar` 直接运行。
 
 - 更多GitHub Action配置参考 [https://docs.github.com/cn/actions/reference/encrypted-secrets](https://docs.github.com/cn/actions/reference/encrypted-secrets)
