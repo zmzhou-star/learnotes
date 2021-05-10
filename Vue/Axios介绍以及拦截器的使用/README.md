@@ -186,5 +186,5 @@ instance.interceptors.request.use(function () {/*...*/});
 ### 使用实例
 - 项目中使用实例：[https://gitee.com/zmzhou-star/easyboot/blob/master/vue-easyboot/src/utils/request.js](https://gitee.com/zmzhou-star/easyboot/blob/master/vue-easyboot/src/utils/request.js)
 
-- 官方文档：[https://axios-http.com/zh/docs/](https://axios-http.com/zh/docs/)
-- axios中文文档|axios中文网：[http://www.axios-js.com/zh-cn/docs/index.html](http://www.axios-js.com/zh-cn/docs/index.html)
+- 官方文档：[https://axios-http.com/zh/](https://axios-http.com/zh/)
+- axios中文文档|axios中文网：[http://www.axios-js.com/zh-cn/](http://www.axios-js.com/zh-cn/)
