@@ -3,6 +3,10 @@
 ## 介绍
 Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主要记录平时学习的一些技术和项目中遇到的问题，微信公众号 [**zmzhou-star**](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 同步更新，欢迎关注；笔记内容包含但不限于Spring，Springboot，SpringCloud，Linux，Vue，数据库，小程序，Android + H5，Git，计算机网络，操作系统，计算机组成原理等。如果笔记对您有帮助的话，欢迎star支持，开源不易请多鼓励！非常感谢！持续更新中~
 
+本仓库有来源自己总结、网上收集、视频笔记，如果有侵权之处，可以联系我进行删除。
+
+因个人能力有限，笔记中可能还有**很多错误**的地方，还请大家能够多多交流指正，也欢迎各位提交 **Pull requests** 进行完善。
+
 ## 微信公众号文章
 > 作者的个人微信公众号：[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 关注我不迷路
 
