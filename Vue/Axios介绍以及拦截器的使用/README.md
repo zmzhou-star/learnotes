@@ -1,6 +1,6 @@
 ### 什么是 axios？
 - Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
-- 我们在使用Axios时候，一般会进行封装，主要包括全局的 axios 默认配置，请求拦截器，响应拦截器
+- 我们在使用Axios时候，一般会进行封装，主要包括全局的 axios 默认配置，请求拦截器，响应拦截器等。
 
 ### 特性
 - 从浏览器中创建 XMLHttpRequests
