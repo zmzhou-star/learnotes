@@ -18,6 +18,8 @@ Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主�
 - [Sentinel-dashboard的流控配置持久化到Nacos](https://mp.weixin.qq.com/s/J1pBh1gpqmKqKD0qYdkclg)
 - [Nacos安装](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
 - [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/KCxxRyAEusIQ3paTKw2eiw)
+- [提高生产力必须知道的浏览器插件](https://mp.weixin.qq.com/s/uBIXpeM9rX3T9Pdp5-FszQ)
+- [SpringBoot前后端分离项目解决跨域问题的3种方案](https://mp.weixin.qq.com/s/xzMFV9TOiYMfNRyMs5FJng)
 
 ## 文章列表
 [文章列表](_sidebar.md ':include :type=markdown')

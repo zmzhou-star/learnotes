@@ -16,6 +16,8 @@
   - [Sentinel-dashboard的流控配置持久化到Nacos](https://mp.weixin.qq.com/s/J1pBh1gpqmKqKD0qYdkclg)
   - [Nacos安装](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
   - [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/KCxxRyAEusIQ3paTKw2eiw)
+  - [提高生产力必须知道的浏览器插件](https://mp.weixin.qq.com/s/uBIXpeM9rX3T9Pdp5-FszQ)
+  - [SpringBoot前后端分离项目解决跨域问题的3种方案](https://mp.weixin.qq.com/s/xzMFV9TOiYMfNRyMs5FJng)
 
 - Redis
   - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
@@ -32,6 +34,9 @@
   - [springboot+redis实现session共享](Linux/Springboot实现session共享/README.md)
 - MQ
   - [新一代消息中间件-Pulsar](/MQ/新一代消息中间件-Pulsar/README.md)
+  
+- Vue
+  - [Axios介绍以及拦截器的使用](/Vue/Axios介绍以及拦截器的使用/README.md)
   
 - 面试题(算法题)
   - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
