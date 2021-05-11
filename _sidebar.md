@@ -41,7 +41,7 @@
 - 面试题(算法题)
   - [判断数组是否是相邻数组？](src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
   - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
-  - [求太阳能电池板最大面积](/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code text')
+  - [求太阳能电池板最大面积](src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code text')
   - [岛屿的最大面积](/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include :type=code text')
 
 - 程序员之友-提高生产力
