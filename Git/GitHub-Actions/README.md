@@ -72,6 +72,10 @@
 ![](imgs/maven-publish.png)
 ![](imgs/maven-publish-running.png)
 
+- 如果任务执行失败，就会收到如下邮件，点击可进入GitHub查看失败原因；
+  
+![](imgs/failed-mail.png)
+
 - 发布成功后就出现如下下载页面
 
 ![](imgs/maven-publish-success.png)
