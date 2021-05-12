@@ -409,6 +409,8 @@ logstash:
 
 ![](imgs/su-elastic.png)
 
+- [设置Nginx反向代理账号密码访问](/Linux/设置Nginx访问账号密码/README.md)
+
 - JVM Support Matrix [https://www.elastic.co/cn/support/matrix#matrix_jvm](https://www.elastic.co/cn/support/matrix#matrix_jvm)
 
 ### 防火墙相关命令
