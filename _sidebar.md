@@ -23,6 +23,9 @@
   - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
   - [Linux安装Redis，Windows安装Redis](Redis/Redis安装/README.md)
 
+- ElasticStack
+  - [搭建ELK分布式日志解决方案](/ElasticStack/搭建ELK分布式日志解决方案/README.md)
+  
 - Linux
   - [Keepalived + Nginx 实现高可用 Web 负载均衡](Linux/Keepalived%20+%20Nginx%20实现高可用%20Web%20负载均衡/README.md)
   - [Linux，Windows安装Nginx](Linux/Nginx安装/README.md)
@@ -41,8 +44,8 @@
 - 面试题(算法题)
   - [判断数组是否是相邻数组？](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
   - [求两个字符串最长公共字串的长度](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
-  - [求太阳能电池板最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :ignore')
-  - [岛屿的最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include :ignore text')
+  - [求太阳能电池板最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code')
+  - [岛屿的最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include')
 
 - 程序员之友-提高生产力
   - [提高生产力必须知道的网站](程序员之友/提高生产力必须知道的网站/README.md)

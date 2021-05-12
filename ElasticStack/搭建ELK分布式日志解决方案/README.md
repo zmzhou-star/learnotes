@@ -120,7 +120,31 @@ vim startup.sh
 nohup ./bin/logstash -f config/logstash.conf &
 chmod +x startup.sh
 ```
-
+`vim config/logstash.conf` 添加配置如下
+```text
+input {
+  beats {
+    port => 5044
+  }
+  tcp {
+    mode => "server"
+    host => "0.0.0.0"  # 允许任意主机发送日志
+    type => "elk1"      # 设定type以区分每个输入源
+    port => 4567      
+    codec => json_lines   # 数据格式
+  }
+}
+output {
+  if [type] == "elk1" {
+    elasticsearch {
+      action => "index"          # 输出时创建映射
+      hosts  => "192.168.163.132:9200"   # ElasticSearch 的地址和端口
+      index  => "elk1"         # 指定索引名
+      codec  => "json"
+     }
+  }
+}
+```
 ### 安装 Kibana
 - 下载相应版本的 Kibana [https://www.elastic.co/cn/downloads/kibana](https://www.elastic.co/cn/downloads/kibana)
   
@@ -143,6 +167,192 @@ nohup ./bin/kibana &
 
 ![](imgs/elk-home.png)
 
+### springboot + logback 输出日志到 logstash
+- 添加 logstash 依赖 `pom.xml`
+```xml
+<!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+<dependency>
+  <groupId>net.logstash.logback</groupId>
+  <artifactId>logstash-logback-encoder</artifactId>
+  <version>6.6</version>
+</dependency>
+```
+- 修改 `application.yml`，添加配置
+```yaml
+logstash:
+  address: 192.168.163.132:4567
+```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- logstash地址，从 application.yml 中获取-->
+    <springProperty scope="context" name="LOGSTASH_ADDRESS" source="logstash.address"/>
+    <!--日志在工程中的输出位置-->
+    <property name="LOG_FILE" value="/opt/web-shell/logging"/>
+    <!-- 彩色日志依赖的渲染类 -->
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx"
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <!--控制台的日志输出样式-->
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <!-- 日志输出编码 -->
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <!--文件-->
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 多JVM同时操作同一个日志文件 -->
+        <Prudent>false</Prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>
+                ${LOG_FILE}.%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+            <!-- 日志最大的历史 10天 -->
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} %-5level logger{39} -%msg%n
+            </Pattern>
+        </layout>
+    </appender>
+    <!--输出到logstash的appender-->
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <!--可以访问的logstash日志收集端口-->
+        <destination>${LOGSTASH_ADDRESS}</destination>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp>
+                    <timeZone>Asia/Shanghai</timeZone>
+                </timestamp>
+                <pattern>
+                    <pattern>
+                        {
+                        "app": "elk1",
+                        "level": "%level",
+                        "thread": "%thread",
+                        "logger": "%logger{50} %M %L ",
+                        "message": "%msg"
+                        }
+                    </pattern>
+                </pattern>
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                        <maxDepthPerThrowable>100</maxDepthPerThrowable>
+                        <rootCauseFirst>true</rootCauseFirst>
+                        <inlineHash>true</inlineHash>
+                    </throwableConverter>
+                </stackTrace>
+            </providers>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="fileAppender"/>
+        <appender-ref ref="LOGSTASH"/>
+    </root>
+</configuration>
+```
+### springboot + log4j2 异步输出日志到 logstash
+- 修改 `log4f2.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数-->
+<configuration status="warn" name="web-shell" monitorInterval="300">
+  <properties>
+    <property name="LOG_HOME">/opt/web-shell/logs</property>
+    <property name="maxHistory">7</property>
+    <!-- 这个都知道是输出日志的格式 -->
+    <property name="pattern">%d{yyyy-MM-dd HH:mm:ss z} [%thread] %-5level %class{36} [%M:%L] - %msg%xEx%n</property>
+    <property name="console_pattern">%d{HH:mm:ss.SSS} [%thread] %-5level %class{36} [%M:%L] - %msg%xEx%n</property>
+    <property name="logstash_pattern">{"app": "web-shell", "level": "%level", "message": "%thread %M %L - %msg%xEx%n"}</property>
+  </properties>
+  <!--先定义所有的appender -->
+  <appenders>
+    <!--这个输出控制台的配置 -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <!-- 控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
+      <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+      <PatternLayout pattern="${console_pattern}"/>
+    </Console>
+    <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用 -->
+    <!--append为TRUE表示消息增加到指定文件中，false表示消息覆盖指定的文件内容，默认值是true -->
+    <File name="log" fileName="${LOG_HOME}/log4j2.log" append="false">
+      <PatternLayout pattern="${console_pattern}"/>
+      <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File>
+    <!-- 打印出所有的error信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+    <RollingFile name="errorRollingFile" fileName="${LOG_HOME}/error.log"
+                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/%d{yyyy-MM-dd}-error-%i.log.gz">
+      <PatternLayout pattern="${pattern}"/>
+      <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+      <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="${maxHistory}"/>
+    </RollingFile>
+    <!-- 打印出所有的warn信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+    <RollingFile name="warnRollingFile" fileName="${LOG_HOME}/warn.log"
+                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/%d{yyyy-MM-dd}-warn-%i.log.gz">
+      <PatternLayout pattern="${pattern}"/>
+      <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+      <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="${maxHistory}"/>
+    </RollingFile>
+    <!-- 打印出所有的info信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+    <RollingFile name="infoRollingFile" fileName="${LOG_HOME}/info.log"
+                 filePattern="${LOG_HOME}/$${date:yyyy-MM}/%d{yyyy-MM-dd}-info-%i.log.gz">
+      <PatternLayout pattern="${pattern}"/>
+      <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="100 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="${maxHistory}"/>
+    </RollingFile>
+    <!-- 和logstash建立Socket连接 -->
+    <Socket name="logstash" host="192.168.163.132" port="4567" protocol="TCP">
+      <PatternLayout pattern="${logstash_pattern}" />
+    </Socket>
+  </appenders>
+  <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效 -->
+  <loggers>
+    <!--过滤掉spring和hibernate的一些无用的DEBUG信息-->
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="org.springframework" level="INFO"/>
+    <!-- 日志输出到logstash -->
+    <logger name="com.github.zmzhoustar" level="info" includeLocation="false" >
+      <appender-ref ref="logstash" />
+    </logger>
+    <root level="INFO">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="log"/>
+      <appender-ref ref="infoRollingFile"/>
+      <appender-ref ref="warnRollingFile"/>
+      <appender-ref ref="errorRollingFile"/>
+    </root>
+  </loggers>
+</configuration>
+```
+
 - JVM Support Matrix [https://www.elastic.co/cn/support/matrix#matrix_jvm](https://www.elastic.co/cn/support/matrix#matrix_jvm)
 
 ### 防火墙相关命令
@@ -160,6 +370,7 @@ systemctl stop firewalld
 firewall-cmd --zone=public --list-ports
 #添加一个端口
 firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=4567/tcp --permanent
 firewall-cmd --zone=public --add-port=5601/tcp --permanent
 #删除一个端口
 firewall-cmd --zone=public --remove-port=80/tcp --permanent
