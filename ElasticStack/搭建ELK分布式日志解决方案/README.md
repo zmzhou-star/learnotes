@@ -98,22 +98,23 @@ source /etc/profile
 bootstrap check failure [1] of [2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 bootstrap check failure [2] of [2]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
 ```
-解决：[1]编辑 `sysctl.conf` 添加如下配置
+解决：`[1]`编辑 `sysctl.conf` 添加如下配置
 ```shell
 # echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 # sysctl -p  #使修改立即生效
 ```
-[2]在elasticsearch.yml中加上如下配置：
+`[2]`在`elasticsearch.yml`中加上如下配置：
 ```yaml
 discovery.seed_hosts: ["127.0.0.1", "zmzhou-132-elk"]
 cluster.initial_master_nodes: ["es-node-1"]
 ```
+
 - 报错3 ERROR: bootstrap checks failed
 ```text
 max file descriptors [4096] for elasticsearch process likely too low, increase to at least [65536]
 max number of threads [1024] for user [elastic] likely too low, increase to at least [2048]
 ```
-解决：[1]切换到root用户，编辑limits.conf 根据错误提示添加如下内容
+解决：`[1]` 切换到root用户，编辑limits.conf 根据错误提示添加如下内容:
 ```shell
 vi /etc/security/limits.conf 
 # 添加如下内容:
@@ -122,18 +123,19 @@ vi /etc/security/limits.conf
 * soft nproc 2048
 * hard nproc 4096
 ```
-[2]编辑 `90-nproc.conf ` 修改配置
+`[2]`编辑 `90-nproc.conf ` 修改配置
 ```shell
 vi /etc/security/limits.d/90-nproc.conf
 #修改为
 * soft nproc 2048
 ```
+
 - 报错4 bootstrap checks failed
 ```text
 bootstrap checks failed
 system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
 ```
-解决：在elasticsearch.yml中加上如下配置：
+解决：在`elasticsearch.yml`中加上如下配置：
 ```yaml
 bootstrap.memory_lock: false
 bootstrap.system_call_filter: false
