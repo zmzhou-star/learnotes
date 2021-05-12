@@ -115,17 +115,19 @@ max file descriptors [4096] for elasticsearch process likely too low, increase t
 max number of threads [1024] for user [elastic] likely too low, increase to at least [2048]
 ```
 解决：`[1]` 切换到root用户，编辑limits.conf 根据错误提示添加如下内容:
+
 ```shell
-vi /etc/security/limits.conf 
-# 添加如下内容:
+vim /etc/security/limits.conf 
+# 添加如下内容
 * soft nofile 65536
 * hard nofile 131072
 * soft nproc 2048
 * hard nproc 4096
 ```
+
 `[2]`编辑 `90-nproc.conf ` 修改配置
 ```shell
-vi /etc/security/limits.d/90-nproc.conf
+vim /etc/security/limits.d/90-nproc.conf
 #修改为
 * soft nproc 2048
 ```
