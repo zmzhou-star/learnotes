@@ -150,7 +150,7 @@ bootstrap.system_call_filter: false
 - 下载相应版本的 Logstash [https://www.elastic.co/cn/downloads/logstash](https://www.elastic.co/cn/downloads/logstash)
 
 ![](imgs/Logstash.png)
-- 解压，修改配置文件，启动
+- 解压，修改配置文件
 ```shell
 tar -zxvf logstash-7.12.1-linux-x86_64.tar.gz 
 cd logstash-7.12.1/
@@ -185,6 +185,12 @@ output {
      }
   }
 }
+```
+- 启动 logstash
+```shell
+./startup.sh
+#查看日志
+tail -100f nohup.out
 ```
 ### 安装 Kibana
 - 下载相应版本的 Kibana [https://www.elastic.co/cn/downloads/kibana](https://www.elastic.co/cn/downloads/kibana)
