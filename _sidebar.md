@@ -23,7 +23,7 @@
   - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
   - [Linux安装Redis，Windows安装Redis](Redis/Redis安装/README.md)
 
-- ElasticStack
+- [ElasticStack](/ElasticStack/README.md)
   - [搭建ELK分布式日志解决方案](/ElasticStack/搭建ELK分布式日志解决方案/README.md)
   
 - Linux

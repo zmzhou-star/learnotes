@@ -1,3 +1,8 @@
+### 介绍
+ELK是三个开源项目的首字母缩写，这三个项目分别是：Elasticsearch、Logstash 和 Kibana。
+- Elasticsearch 是一个搜索和分析引擎。
+- Logstash 是服务器端数据处理管道，能够同时从多个来源采集数据，转换数据，然后将数据发送到诸如 Elasticsearch 等“存储库”中。
+- Kibana 则可以让用户在 Elasticsearch 中使用图形和图表对数据进行可视化。
 ### 克隆一台虚拟机
 - 从之前装好jdk的centos虚拟机快照克隆一台专门搭建elk环境
 
@@ -411,7 +416,7 @@ logstash:
 ![](imgs/select-web-shell.png)
 ![](imgs/discover-view.png)
 
-- 至此，我们的ELK环境已经搭好啦，不过还有更多功能等待解锁，整个软件目录如下
+- 至此，我们的ELK环境已经搭好啦，不过还有更多功能等待解锁，比如 **Beats等**，整个软件目录如下
 
 ![](imgs/su-elastic.png)
 
