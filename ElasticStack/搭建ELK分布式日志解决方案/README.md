@@ -118,7 +118,7 @@ max number of threads [1024] for user [elastic] likely too low, increase to at l
 
 ```shell
 vim /etc/security/limits.conf 
-# 添加如下内容
+#添加如下内容
 * soft nofile 65536
 * hard nofile 131072
 * soft nproc 2048
@@ -156,7 +156,7 @@ tar -zxvf logstash-7.12.1-linux-x86_64.tar.gz
 cd logstash-7.12.1/
 cp config/logstash-sample.conf config/logstash.conf
 vim startup.sh
-# 编辑如下内容，保存退出
+#编辑如下内容，保存退出
 #!/bin/bash
 nohup ./bin/logstash -f config/logstash.conf &
 chmod +x startup.sh
@@ -180,7 +180,7 @@ output {
     elasticsearch {
       action => "index"          # 输出时创建映射
       hosts  => "192.168.163.132:9200"   # ElasticSearch 的地址和端口
-      index  => "elk1"         # 指定索引名
+      index  => "elk1-%{+YYYY.MM.dd}"         # 指定索引名
       codec  => "json"
      }
   }
@@ -195,12 +195,13 @@ output {
 tar -zxvf kibana-7.12.1-linux-x86_64.tar.gz 
 cd kibana-7.12.1-linux-x86_64/
 vim config/kibana.yml 
-# 修改如下内容：
+#修改如下内容：
 server.port: 5601
 server.host: "0.0.0.0"
 server.name: "zmzhou-132-elk"
 elasticsearch.hosts: ["http://localhost:9200"]
 kibana.index: ".kibana"
+i18n.locale: "zh-CN"
 # 后台启动
 nohup ./bin/kibana &
 ```
@@ -229,6 +230,7 @@ logstash:
 <configuration>
     <!-- logstash地址，从 application.yml 中获取-->
     <springProperty scope="context" name="LOGSTASH_ADDRESS" source="logstash.address"/>
+    <springProperty scope="context" name="APPLICATION_NAME" source="spring.application.name"/>
     <!--日志在工程中的输出位置-->
     <property name="LOG_FILE" value="/opt/web-shell/logging"/>
     <!-- 彩色日志依赖的渲染类 -->
@@ -280,7 +282,7 @@ logstash:
                 <pattern>
                     <pattern>
                         {
-                        "app": "elk1",
+                        "app": "${APPLICATION_NAME}",
                         "level": "%level",
                         "thread": "%thread",
                         "logger": "%logger{50} %M %L ",
@@ -394,6 +396,18 @@ logstash:
   </loggers>
 </configuration>
 ```
+### 测试，启动spring boot项目，访问 `http://192.168.163.132:5601/`
+- 创建索引，我们之前在 logstash 配置的索引规则是以 elk1 开头：
+
+![](imgs/elastic-index.png)
+- 筛选我们的应用名
+
+![](imgs/select-web-shell.png)
+![](imgs/discover-view.png)
+
+- 至此，我们的ELK环境已经搭好啦，不过还有更多功能等待解锁，整个软件目录如下
+
+![](imgs/su-elastic.png)
 
 - JVM Support Matrix [https://www.elastic.co/cn/support/matrix#matrix_jvm](https://www.elastic.co/cn/support/matrix#matrix_jvm)
 
