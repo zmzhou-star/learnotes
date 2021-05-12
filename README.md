@@ -15,11 +15,13 @@ Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主�
 - [Keepalived + Nginx 实现高可用 Web 负载均衡](https://mp.weixin.qq.com/s/mb2Dpd5iKTkvZd22YoXegQ)
 - [Linux，Windows安装Nginx](https://mp.weixin.qq.com/s/x7JktQH3RIzGeRTQts7Xxg)
 - [设置Nginx开机启动](https://mp.weixin.qq.com/s/EZWVZo5tTXpuUxIjEGXf_A)
+- [设置Nginx反向代理账号密码访问](https://mp.weixin.qq.com/s/QXFOdhsNJfV7zAcyaq6o4A)
 - [Sentinel-dashboard的流控配置持久化到Nacos](https://mp.weixin.qq.com/s/J1pBh1gpqmKqKD0qYdkclg)
 - [Nacos安装](https://mp.weixin.qq.com/s/duFTZTsnR1CHfn5OUFzFuw)
 - [tomcat+redis+Redisson实现session共享](https://mp.weixin.qq.com/s/KCxxRyAEusIQ3paTKw2eiw)
 - [提高生产力必须知道的浏览器插件](https://mp.weixin.qq.com/s/uBIXpeM9rX3T9Pdp5-FszQ)
 - [SpringBoot前后端分离项目解决跨域问题的3种方案](https://mp.weixin.qq.com/s/xzMFV9TOiYMfNRyMs5FJng)
+- [搭建ELK分布式日志解决方案 + Springboot + logback 输出日志到 ELK](https://mp.weixin.qq.com/s/_RAVwDuWzSCBoqktWuKD1Q)
 
 ## 文章列表
 [文章列表](_sidebar.md ':include :type=markdown')

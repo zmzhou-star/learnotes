@@ -407,6 +407,7 @@ logstash:
   </loggers>
 </configuration>
 ```
+- 本项目地址: [https://gitee.com/zmzhou-star/web-shell](https://gitee.com/zmzhou-star/web-shell)
 ### 测试，启动spring boot项目，访问 `http://192.168.163.132:5601/`
 - 创建索引，我们之前在 logstash 配置的索引规则是以 elk1 开头：
 
