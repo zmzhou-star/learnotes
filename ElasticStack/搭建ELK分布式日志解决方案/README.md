@@ -36,6 +36,7 @@ DNS2=114.114.114.114
 - 检查IP，网络和Java环境
 
 ![](imgs/ipaddr.png)
+
 如果Java环境没有配好，请参考 [jdk1.8商用免费版下载地址](/程序员之友/提高生产力必须知道的网站/README.md)
 下载，并配置环境变量：
 ```shell
@@ -82,7 +83,7 @@ cd elasticsearch-7.12.1/
 # 后台启动
 ./bin/elasticsearch -d
 ```
-- 报错解决办法
+#### 报错以及解决办法
 - 报错1 `JAVA_HOME is deprecated, use ES_JAVA_HOME`
   
 ![](imgs/error1.png)
@@ -91,15 +92,51 @@ vim /etc/profile
 export ES_JAVA_HOME=/home/elastic/elasticsearch-7.12.1/jdk
 source /etc/profile
 ```
-- 报错2 
+- 报错2 ERROR: bootstrap checks failed
 ```text
 [2] bootstrap checks failed. You must address the points described in the following [2] lines before starting Elasticsearch.
 bootstrap check failure [1] of [2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 bootstrap check failure [2] of [2]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
 ```
+解决：[1]编辑 `sysctl.conf` 添加如下配置
 ```shell
 # echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 # sysctl -p  #使修改立即生效
+```
+[2]在elasticsearch.yml中加上如下配置：
+```yaml
+discovery.seed_hosts: ["127.0.0.1", "zmzhou-132-elk"]
+cluster.initial_master_nodes: ["es-node-1"]
+```
+- 报错3 ERROR: bootstrap checks failed
+```text
+max file descriptors [4096] for elasticsearch process likely too low, increase to at least [65536]
+max number of threads [1024] for user [elastic] likely too low, increase to at least [2048]
+```
+解决：[1]切换到root用户，编辑limits.conf 根据错误提示添加如下内容
+```shell
+vi /etc/security/limits.conf 
+# 添加如下内容:
+* soft nofile 65536
+* hard nofile 131072
+* soft nproc 2048
+* hard nproc 4096
+```
+[2]编辑 `90-nproc.conf ` 修改配置
+```shell
+vi /etc/security/limits.d/90-nproc.conf
+#修改为
+* soft nproc 2048
+```
+- 报错4 bootstrap checks failed
+```text
+bootstrap checks failed
+system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
+```
+解决：在elasticsearch.yml中加上如下配置：
+```yaml
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
 ```
 - 查看日志 `tail -100f /home/elastic/elasticsearch-7.12.1/logs/zmzhou-132-elk.log `, 启动成功如下：
   
@@ -182,6 +219,7 @@ nohup ./bin/kibana &
 logstash:
   address: 192.168.163.132:4567
 ```
+- 修改 `logback-spring.xml` 配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
