@@ -61,3 +61,7 @@
 - unpkg是npm上所有内容的快速，全球内容交付网络。 [https://unpkg.com/](https://unpkg.com/browse/prismjs@1.23.0/)
 - A free CDN for Open Source [https://cdn.jsdelivr.net/](https://www.jsdelivr.com/)
 - 防止XSS攻击 [https://jsxss.com/zh/index.html](https://jsxss.com/zh/index.html)
+  
+- 学位网|中国学位认证 [https://www.chinadegrees.cn/cqva/account/login.html](https://www.chinadegrees.cn/cqva/account/login.html)
+- 中国高等教育学生信息网（学信网） [https://my.chsi.com.cn/archive/index.jsp](https://my.chsi.com.cn/archive/index.jsp)
+- 中国知网 [https://www.cnki.net/](https://www.cnki.net/)
