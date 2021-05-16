@@ -37,8 +37,8 @@
   - [Nacos安装](Linux/Nacos安装/README.md)
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
   - [springboot+redis实现session共享](Linux/Springboot实现session共享/README.md)
-  - [防火墙相关命令](Linux/防火墙相关命令/README.md)
-  - [安装FTP服务](Linux/安装FTP服务/README.md)
+  - [防火墙相关命令](/Linux/防火墙相关命令/README.md)
+  - [安装FTP服务](/Linux/安装FTP服务/README.md)
   
 - MQ
   - [新一代消息中间件-Pulsar](/MQ/新一代消息中间件-Pulsar/README.md)
@@ -47,7 +47,7 @@
   - [Axios介绍以及拦截器的使用](/Vue/Axios介绍以及拦截器的使用/README.md)
   
 - 面试题(算法题)
-  - [判断数组是否是相邻数组？](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
+  - [判断数组是否是相邻数组？](/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
   - [求两个字符串最长公共字串的长度](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
   - [求太阳能电池板最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code')
   - [岛屿的最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include')
