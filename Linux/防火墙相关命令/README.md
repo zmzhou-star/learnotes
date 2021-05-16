@@ -34,7 +34,7 @@ service iptables restart
 ```
 ### centos7.x及以后版本
 - centos7版本对防火墙进行加强,不再使用原来的iptables,启用firewalld
-1. 常用命令
+1. **常用命令**
 ```shell
 # 启动：
 systemctl start firewalld
@@ -49,8 +49,8 @@ systemctl stop firewalld
 firewall-cmd --zone=public --list-ports
 #添加一个端口
 firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --zone=public --add-port=4567/tcp --permanent
-firewall-cmd --zone=public --add-port=5601/tcp --permanent
+#添加一段端口
+firewall-cmd --zone=public --add-port=20-21/tcp --permanent
 #删除一个端口
 firewall-cmd --zone=public --remove-port=80/tcp --permanent
 #更新防火墙规则
