@@ -88,6 +88,7 @@ userlist_enable=YES
 ftpuser
 ```
 或者执行命令：`echo "ftpuser" | sudo tee -a /etc/vsftpd/user_list`
+
 5. 重启FTP服务
 ```shell
 systemctl restart vsftpd

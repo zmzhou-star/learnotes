@@ -19,6 +19,7 @@ vim /etc/sysconfig/iptables
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT
+#主要在此处添加开放端口配置
 -A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
 -A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT
 -A INPUT -j REJECT –reject-with icmp-host-prohibited
