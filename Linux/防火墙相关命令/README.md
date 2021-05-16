@@ -9,8 +9,8 @@ service iptables status
 2. 配置防火墙
 ```
 vim /etc/sysconfig/iptables
-# Firewall configuration written by system-config-firewall
-# Manual customization of this file is not recommended.
+#Firewall configuration written by system-config-firewall
+#Manual customization of this file is not recommended.
 *filter
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
