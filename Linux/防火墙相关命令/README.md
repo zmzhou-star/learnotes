@@ -95,8 +95,8 @@ firewall-cmd --list-services
 firewall-cmd --get-services
 firewall-cmd --add-service=<service>
 firewall-cmd --delete-service=<service>
-在每次修改端口和服务后/etc/firewalld/zones/public.xml文件就会被修改,所以也可以在文件中之间修改,然后重新加载
-使用命令实际也是在修改文件，需要重新加载才能生效。
+#在每次修改端口和服务后/etc/firewalld/zones/public.xml文件就会被修改,所以也可以在文件中之间修改,然后重新加载
+#使用命令实际也是在修改文件，需要重新加载才能生效。
 
 firewall-cmd --zone=public --query-port=80/tcp
 firewall-cmd --zone=public --query-port=8080/tcp
@@ -118,12 +118,12 @@ firewall-cmd --zone=public --query-port=8080/tcp
 –permanent #永久生效，没有此参数重启后失效
 ```
 
-6. 详细使用
+6. 详细用法
 ```text
-firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.0.4/24" service name="http" accept' //设置某个ip访问某个服务
-firewall-cmd --permanent --zone=public --remove-rich-rule='rule family="ipv4" source address="192.168.0.4/24" service name="http" accept' //删除配置
-firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=192.168.0.1/2 port port=80 protocol=tcp accept' //设置某个ip访问某个端口
-firewall-cmd --permanent --remove-rich-rule 'rule family=ipv4 source address=192.168.0.1/2 port port=80 protocol=tcp accept' //删除配置
+firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="192.168.0.4/24" service name="http" accept' #设置某个ip访问某个服务
+firewall-cmd --permanent --zone=public --remove-rich-rule='rule family="ipv4" source address="192.168.0.4/24" service name="http" accept' #删除配置
+firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address=192.168.0.1/2 port port=80 protocol=tcp accept' #设置某个ip访问某个端口
+firewall-cmd --permanent --remove-rich-rule 'rule family=ipv4 source address=192.168.0.1/2 port port=80 protocol=tcp accept' #删除配置
 
 firewall-cmd --query-masquerade # 检查是否允许伪装IP
 firewall-cmd --add-masquerade # 允许防火墙伪装IP
