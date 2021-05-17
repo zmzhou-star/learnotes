@@ -22,8 +22,8 @@
   - [搭建ELK分布式日志解决方案 + Springboot + logback 输出日志到 ELK](https://mp.weixin.qq.com/s/_RAVwDuWzSCBoqktWuKD1Q)
 
 - Redis
-  - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
   - [Linux安装Redis，Windows安装Redis](Redis/Redis安装/README.md)
+  - [设置Redis开机启动](Redis/设置Redis开机启动/README.md)
 
 - [ElasticStack](/ElasticStack/README.md)
   - [搭建ELK分布式日志解决方案](/ElasticStack/搭建ELK分布式日志解决方案/README.md)
