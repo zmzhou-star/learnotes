@@ -65,3 +65,6 @@
 - 学位网|中国学位认证 [https://www.chinadegrees.cn/cqva/account/login.html](https://www.chinadegrees.cn/cqva/account/login.html)
 - 中国高等教育学生信息网（学信网） [https://my.chsi.com.cn/archive/index.jsp](https://my.chsi.com.cn/archive/index.jsp)
 - 中国知网 [https://www.cnki.net/](https://www.cnki.net/)
+
+- Github常见标签生成网站 [https://shields.io/](https://shields.io/)
+- Github常见标签生成网站 [https://badgen.net/](https://badgen.net/)

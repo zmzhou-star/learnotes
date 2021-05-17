@@ -38,6 +38,7 @@ docsify serve ./docs
 
 ### 切换到`gh-pages`分支，在项目根目录下
 - 新建 `_coverpage.md` 自定义封面页
+
 ```
 <img width="180px" height="180px" style="border-radius: 50%" border="0" src="./docs/favicon.ico" alt="icon">
 # learnotes
@@ -59,14 +60,18 @@ docsify serve ./docs
 [Github](<https://github.com/zmzhou-star/learnotes>)
 [开始学习](README.md)
 ```
+
 - 新建 `_navbar.md` 自定义导航栏
+
 ```
 - [Gitee](https://gitee.com/zmzhou-star/learnotes)
 - [Github](https://github.com/zmzhou-star/learnotes)
 - [笔记文档](https://zmzhou-star.github.io/learnotes/)
 - [公众号`zmzhou-star`](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
 ```
+
 - 新建 `_sidebar.md` 自定义侧边栏
+
 ```
 - [**Java全栈开发学习笔记**](README.md)
 - **Java程序员ZZM**
@@ -89,7 +94,9 @@ docsify serve ./docs
   - [Nacos安装](Linux/Nacos安装/README.md)
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
 ```
+
 - 修改 `index.html` 如下
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +162,7 @@ docsify serve ./docs
 </body>
 </html>
 ```
+
 ### 提交代码
 ```shell
 $ git add .
