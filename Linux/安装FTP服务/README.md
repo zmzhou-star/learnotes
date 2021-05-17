@@ -97,7 +97,7 @@ ftpuser
 systemctl restart vsftpd
 ```
 6. 打开防火墙
-- 打开21端口(FTP 命令端口),20端口（FTP 数据端口） 和 30000-31000(被动模式端口范围)，在你的防火墙中，输入下面的命令：
+- 打开21端口（FTP 命令端口）,20端口（FTP 数据端口） 和 30000-31000（被动模式端口范围），在你的防火墙中，输入下面的命令：
 ```shell
 sudo firewall-cmd --zone=public --add-port=20-21/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=30000-31000/tcp --permanent
