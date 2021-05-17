@@ -13,10 +13,10 @@
   </a>
   
   <a href="https://github.com/zmzhou-star/learnotes/stargazers" target="_blank" rel="noopener">
-      <img src="https://badgen.net/github/stars/zmzhou-star/learnotes?icon=github&color=4ab8a1" alt="stars">
+      <img src="https://img.shields.io/github/forks/zmzhou-star/learnotes?style=social" alt="fork">
   </a>
   <a href="https://github.com/zmzhou-star/learnotes/members" target="_blank" rel="noopener">
-      <img src="https://badgen.net/github/forks/zmzhou-star/learnotes?icon=github&color=4ab8a1" alt="forks">
+      <img src="https://img.shields.io/github/stars/zmzhou-star/learnotes?style=social" alt="GitHub Repo stars">
   </a>
 </p>
 <p>

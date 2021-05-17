@@ -1,5 +1,6 @@
 ### docsify：一个神奇的文档网站生成器。 [官网](https://docsify.js.org/#/zh-cn/)
 - docsify 可以快速帮你生成文档网站。不同于 GitBook、Hexo 的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。如果你想要开始使用它，只需要创建一个 index.html 就可以开始编写文档并直接部署在 GitHub Pages。
+
 ### 全局安装 docsify-cli 工具，可以方便地创建及在本地预览生成的文档。
 ```shell
 # 需要nodejs环境，下载安装即可：https://nodejs.org/zh-cn/download/
@@ -7,6 +8,7 @@
 npm config set registry "https://registry.npm.taobao.org" 
 npm i docsify-cli -g
 ```
+
 ![](imgs/docsify-npm.png)
 
 ### 初始化项目
@@ -14,6 +16,7 @@ npm i docsify-cli -g
 docsify init ./docs
 ```
 ![](imgs/docsify-init.png)
+
 ### 本地预览网站 提供 LiveReload 功能，可以实时的预览。
 ```shell
 docsify serve ./docs
@@ -38,6 +41,7 @@ docsify serve ./docs
 
 ### 切换到`gh-pages`分支，在项目根目录下
 - 新建 `_coverpage.md` 自定义封面页
+
 ```
 <img width="180px" height="180px" style="border-radius: 50%" border="0" src="./docs/favicon.ico" alt="icon">
 # learnotes
@@ -59,14 +63,18 @@ docsify serve ./docs
 [Github](<https://github.com/zmzhou-star/learnotes>)
 [开始学习](README.md)
 ```
+
 - 新建 `_navbar.md` 自定义导航栏
+
 ```
 - [Gitee](https://gitee.com/zmzhou-star/learnotes)
 - [Github](https://github.com/zmzhou-star/learnotes)
 - [笔记文档](https://zmzhou-star.github.io/learnotes/)
 - [公众号`zmzhou-star`](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png)
 ```
+
 - 新建 `_sidebar.md` 自定义侧边栏
+
 ```
 - [**Java全栈开发学习笔记**](README.md)
 - **Java程序员ZZM**
@@ -89,7 +97,9 @@ docsify serve ./docs
   - [Nacos安装](Linux/Nacos安装/README.md)
   - [tomcat+redis+Redisson实现session共享](Linux/tomcat+redis+Redisson实现session共享/README.md)
 ```
+
 - 修改 `index.html` 如下
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +165,7 @@ docsify serve ./docs
 </body>
 </html>
 ```
+
 ### 提交代码
 ```shell
 $ git add .
