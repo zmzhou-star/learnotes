@@ -3,12 +3,14 @@
 - supervised systemd # 可以跟systemd进程进行交互
 ```sh
 #其他配置参考
+daemonize yes # 以守护进程方式启动
+supervised systemd # 可以跟systemd进程进行交互
 bind 0.0.0.0 #任意ip都可以连接
 protected-mode no #关闭保护，允许非本地连接
 port 6379 #端口号
 pidfile /var/run/redis_6379.pid #进程守护文件，就是存放该进程号相关信息的地方
-dir /usr/loacl/redis-6.0.10/data/ #db等相关目录位置
-logfile "/usr/loacl/redis-6.0.10/logs/redis_6379.log"
+dir /usr/local/redis-6.2.2/data/ #db等相关目录位置
+logfile "/usr/local/redis-6.2.2/logs/redis_6379.log"
 appendonly yes #开启日志形式
 requirepass 123456 #密码
 ```
@@ -24,8 +26,8 @@ After=network.target
 #
 [Service]
 Type=forking
-ExecStart=/usr/loacl/redis-6.0.10/src/redis-server /usr/loacl/redis-6.0.10/redis.conf
-ExecStop=/usr/loacl/redis-6.0.10/src/redis-cli shutdown
+ExecStart=/usr/local/redis-6.2.2/src/redis-server /usr/local/redis-6.2.2/redis.conf
+ExecStop=/usr/local/redis-6.2.2/src/redis-cli shutdown
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=always
 #
@@ -67,7 +69,7 @@ WantedBy=multi-user.target
 
 1. 复制redis启动脚本(redis安装包中包含自启动脚本)
 ```sh
-# cp /usr/loacl/redis-6.0.10/utils/redis_init_script /etc/init.d/redis
+# cp /usr/local/redis-6.2.2/utils/redis_init_script /etc/init.d/redis
 # vim /etc/init.d/redis
 # 在文件中#!/bin/sh的下方添加两行注释代码
 # chkconfig: 2345 10 90  # 注册开机启动的运行级别 2345是默认启动级别 10代表Start的顺序，90代表Kill（Stop）的顺序
@@ -88,10 +90,10 @@ WantedBy=multi-user.target
 ```sh
 # vim /etc/init.d/redis
 REDISPORT=6379
-EXEC=/usr/loacl/redis-6.0.10/src/redis-server
-CLIEXEC=/usr/loacl/redis-6.0.10/src/redis-cli
+EXEC=/usr/local/redis-6.2.2/src/redis-server
+CLIEXEC=/usr/local/redis-6.2.2/src/redis-cli
 PIDFILE=/var/run/redis_${REDISPORT}.pid
-CONF="/usr/loacl/redis-6.0.10/redis.conf"
+CONF="/usr/local/redis-6.2.2/redis.conf"
 ```
 
 3. 启动redis
