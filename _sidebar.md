@@ -47,10 +47,10 @@
   - [Axios介绍以及拦截器的使用](/Vue/Axios介绍以及拦截器的使用/README.md)
   
 - 面试题(算法题)
-  - [判断数组是否是相邻数组？](/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include')
-  - [求两个字符串最长公共字串的长度](src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
+  - [判断数组是否是相邻数组？](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
+  - [求两个字符串最长公共字串的长度](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
   - [求太阳能电池板最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code')
-  - [岛屿的最大面积](src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include')
+  - [岛屿的最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include')
 
 - 程序员之友-提高生产力
   - [提高生产力必须知道的网站](程序员之友/提高生产力必须知道的网站/README.md)
