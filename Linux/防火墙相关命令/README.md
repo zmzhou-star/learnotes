@@ -33,8 +33,11 @@ service iptables restart
 #或者
 /etc/init.d/iptables restart
 ```
+
 ### centos7.x及以后版本
+
 - centos7版本对防火墙进行加强,不再使用原来的iptables,启用firewalld
+
 1. **常用命令**
 ```shell
 # 启动：

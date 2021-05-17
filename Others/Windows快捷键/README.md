@@ -32,3 +32,18 @@
   - 取消自动关机,在运行中输入：`shutdown -a`
   - 关机重启：`shutdown -r`
   - at命令使用条件：必须开启Task scheduler服务（开启的方法在命令界面输入 `net start schedule` ，关闭输入`net stop schedule`）
+  
+- 关闭445,135,137,138,139,3389端口脚本
+```bat
+set PORT=445,135,137,138,139,3389
+set RULE_NAME="1远程连接端口：%PORT% 入栈规则"
+netsh advfirewall firewall show rule name=%RULE_NAME% >nul
+if not ERRORLEVEL 1 (
+rem 对不起，规则 %RULENAME% 已经存在
+) else (
+echo 规则 %RULENAME% 创建中...
+netsh advfirewall firewall add rule name=%RULE_NAME% dir=in action=block protocol=TCP localport=%PORT%
+)
+@pause
+```
+用法：新建bat文件，以管理员身份运行
