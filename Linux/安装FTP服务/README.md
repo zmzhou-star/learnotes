@@ -1,24 +1,27 @@
 ### 安装ftp
-1. 检查是否安装了 ftp ：（下图是已安装的效果，没安装是没有展示）
+1. 检查是否安装了ftp（下图是已安装的效果，没安装是没有展示）
 ```shell
 rpm -qa | grep vsftpd
 ```
 ![](imgs/grep-vsftpd.png)
-2. 安装 `vsftpd` 服务：
+
+2. 安装 `vsftpd` 服务
 ```shell
 yum install -y vsftpd
 ```
 ![](imgs/vsftpd.png)
-3. 安装完成后，启动 FTP 服务：
+
+3. 安装完成后，启动 FTP 服务
 ```shell
 systemctl start vsftpd
 ```
-4. 启动成功后，可以看到系统已经监听了 21 端口：
+4. 启动成功后，可以看到系统已经监听了 21 端口
 ```shell
 systemctl status vsftpd
 netstat -nltp | grep 21
 ```
 ![](imgs/vsftpd-status.png)
+
 5. 禁用匿名用户
 ```shell
 vim /etc/vsftpd/vsftpd.conf
@@ -122,7 +125,7 @@ ssl_enable=YES
 
 ![](imgs/openssl.png)
 
-- 想要更安全，更快速的数据传输，你应该使用 SCP 或者 SFTP。
+- 想要更安全，更快速的数据传输，建议使用 SCP 或者 SFTP。
 ### vsftpd的配置说明，配置文件中限定了vsftpd用户连接控制配置。
 - /etc/vsftpd/vsftpd.conf：来自定义用户登录控制、用户权限控制、超时设置、服务器功能选项、服务器性能选项、服务器响应消息等FTP服务器的配置。
 - /etc/vsftpd/user_list：该文件里的用户账户在默认情况下也不能访问FTP服务器，仅当vsftpd.conf配置文件里启用userlist_enable=YES选项时才允许访问。**白名单**
