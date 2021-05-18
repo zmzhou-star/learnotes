@@ -1,5 +1,6 @@
-### [安装Nginx](/Linux/Nginx安装/README.md)
-- [设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
+### 注册阿里云，免费申领一台云服务器
+- 地址 [https://free.aliyun.com/?spm=5176.10695662.7708050970.1.28142c4fKrKBP8](https://free.aliyun.com/?spm=5176.10695662.7708050970.1.28142c4fKrKBP8)
+- 新人特惠-购买一台云服务器ECS [https://www.aliyun.com/activity/new?spm=5176.12901015.d71.d71.4ea4525cvsDqbO&scm=20140722.3873.7.3972](https://www.aliyun.com/activity/new?spm=5176.12901015.d71.d71.4ea4525cvsDqbO&scm=20140722.3873.7.3972)
 
 ### 安装jdk，配置环境变量
 - 下载，上传jdk-8u202-linux-x64.tar.gz
@@ -17,6 +18,9 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME
 - 刷新环境变量 `source /etc/profile`，检查环境变量配置是否正确 `java -version`
 
 ![](imgs/java-version.png)
+
+### [安装Nginx](/Linux/Nginx安装/README.md)
+- [设置Nginx开机启动](/Linux/设置Nginx开机启动/README.md)
 
 ### [安装Redis](/Redis/Redis安装/README.md)
 - [设置Redis开机启动](/Redis/设置Redis开机启动/README.md)
@@ -78,7 +82,7 @@ use mysql;
 CREATE DATABASE easyboot;
 -- 创建用户
 create user 'easyboot'@'%' identified by 'Zmzhou.V587';
-grant select,insert,update,delete,create on `easyboot`.* to 'easyboot'@'%';
+grant select,insert,update,delete,create,drop on `easyboot`.* to 'easyboot'@'%';
 -- 查看一下用户列表
 select host,user,authentication_string from mysql.user;
 -- 刷新权限，立即启用修改
@@ -93,7 +97,25 @@ mvn clean install -X -Dmaven.test.skip=true -P prod
 - 新建Linux后台运行启动脚本 startup.sh
 ```shell
 #!bin/sh
-nohup java -jar -server easyboot-1.0.jar > easyboot.out 2>&1 &
+nohup java -jar -server easyboot-1.0.jar >/dev/null 2>&1 &
+```
+- 值得注意的是阿里云服务器WAF防火墙不放行**25端口**，所以发邮件需要使用 **465端口** 或者 **587端口**，设置开启**ssl**
+```yaml
+spring:
+  mail:
+  host: smtp.qq.com #SMTP服务器地址
+  # smtp的指定端口 使用465要将protocol改为 smtps 587端口可以使用默认协议smtp
+  port: 465
+  protocol: smtps
+  username: zmzhou818 #登陆账号
+  password: 123456 #登陆密码（或授权码）
+  properties:
+    from: zmzhou818@qq.com #邮件发信人（即真实邮箱）
+    # 设置开启ssl
+    mail:
+      stmp:
+        ssl:
+          enable: true
 ```
 
 #### 添加Nginx反向代码配置

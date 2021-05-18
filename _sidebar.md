@@ -29,6 +29,7 @@
   - [搭建ELK分布式日志解决方案](/ElasticStack/搭建ELK分布式日志解决方案/README.md)
   
 - Linux
+  - [Aliyun云服务器ECS平台部署Nginx+Mysql+Redis+Easyboot企业级前端管理系统](Linux/Aliyun平台Nginx+Mysql+Redis部署easyboot/README.md)
   - [Keepalived + Nginx 实现高可用 Web 负载均衡](Linux/Keepalived%20+%20Nginx%20实现高可用%20Web%20负载均衡/README.md)
   - [Linux，Windows安装Nginx](Linux/Nginx安装/README.md)
   - [设置Nginx开机启动](Linux/设置Nginx开机启动/README.md)
