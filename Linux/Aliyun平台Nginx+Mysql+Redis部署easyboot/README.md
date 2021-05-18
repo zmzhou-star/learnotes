@@ -101,7 +101,7 @@ nohup java -jar -server easyboot-1.0.jar >/dev/null 2>&1 &
 ```
 - 值得注意的是阿里云服务器WAF防火墙不放行**25端口**，所以发邮件需要使用 **465端口** 或者 **587端口**，设置开启**ssl**
 ```yaml
-spring:
+spring: 
   mail:
   host: smtp.qq.com #SMTP服务器地址
   # smtp的指定端口 使用465要将protocol改为 smtps 587端口可以使用默认协议smtp
