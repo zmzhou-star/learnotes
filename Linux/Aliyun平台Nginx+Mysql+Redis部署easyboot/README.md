@@ -66,6 +66,7 @@ ALTER USER USER() IDENTIFIED BY 'Zmzhou.V587';
 use mysql;
 update user set user.Host='%' where user.User='root';
 flush privileges;
+quit;
 ```
 ![](imgs/mysql-change-passwd.png)
 
@@ -102,7 +103,21 @@ location /eboot {
 }
 error_page  404              /404.html;
 location = /404.html {
-# 放错误页面的目录路径。
+    # 放错误页面的目录路径。
     root   html;
 }
 ```
+#### 部署vue前端
+- 打包
+```shell
+cd vue-easyboot
+npm install --registry=https://registry.npm.taobao.org
+#构建生产环境
+npm run build:prod
+```
+- 上传 **dist** 文件夹下的文件到 nginx 的 **html** 文件夹下
+
+#### 浏览器地址栏访问：**http://47.119.196.11**
+阿里云安全组添加**80端口**等放行策略
+
+![](imgs/aliyun-security.png)
