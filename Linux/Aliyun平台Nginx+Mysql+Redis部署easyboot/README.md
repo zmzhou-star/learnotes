@@ -102,20 +102,20 @@ nohup java -jar -server easyboot-1.0.jar >/dev/null 2>&1 &
 - 值得注意的是阿里云服务器WAF防火墙不放行**25端口**，所以发邮件需要使用 **465端口** 或者 **587端口**，设置开启**ssl**
 ```yaml
 spring: 
-  mail:
-  host: smtp.qq.com #SMTP服务器地址
-  # smtp的指定端口 使用465要将protocol改为 smtps 587端口可以使用默认协议smtp
-  port: 465
-  protocol: smtps
-  username: zmzhou818 #登陆账号
-  password: 123456 #登陆密码（或授权码）
-  properties:
-    from: zmzhou818@qq.com #邮件发信人（即真实邮箱）
-    # 设置开启ssl
-    mail:
-      stmp:
-        ssl:
-          enable: true
+  mail: 
+    host: smtp.qq.com #SMTP服务器地址
+    # smtp的指定端口 使用465要将protocol改为 smtps 587端口可以使用默认协议smtp
+    port: 465
+    protocol: smtps
+    username: zmzhou818 #登陆账号
+    password: 123456 #登陆密码（或授权码）
+    properties:
+      from: zmzhou818@qq.com #邮件发信人（即真实邮箱）
+      # 设置开启ssl
+      mail:
+        stmp:
+          ssl:
+            enable: true
 ```
 
 #### 添加Nginx反向代码配置
@@ -137,9 +137,11 @@ npm install --registry=https://registry.npm.taobao.org
 #构建生产环境
 npm run build:prod
 ```
-- 上传 **dist** 文件夹下的文件到 nginx 的 **html** 文件夹下
+- 压缩上传 **dist** 文件夹下的文件到 nginx 的 **html** 文件夹下解压
 
 #### 浏览器地址栏访问：**http://47.119.196.11**
-阿里云安全组添加**80端口**等放行策略
+![](imgs/easyboot.png)
+
+记得要在阿里云安全组添加**80端口**等放行策略
 
 ![](imgs/aliyun-security.png)
