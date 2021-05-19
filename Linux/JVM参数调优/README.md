@@ -52,7 +52,7 @@ JAVA8 里对 metaspace 可以在小范围自动扩展永生代避免溢出。
 - **-Dsun.net.client.defaultReadTimeout=60000**：内容获取超时设置
 - **-Djmagick.systemclassloader=no**：是否生成缩略图的一个框架的配置
 
-#### 最佳实践
+#### 最佳实践参考
 - `vim bin/catalina.sh`
 ```shell
 export JAVA_OPTS="-server -Dfile.encoding=UTF-8 -showversion -Xms2000m -Xmx2000m -Xmn500m -XX:PermSize=256m -XX:MaxPermSize=256m \
