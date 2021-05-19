@@ -2,14 +2,16 @@
 - 官网下载地址： [https://tomcat.apache.org/download-90.cgi](https://tomcat.apache.org/download-90.cgi)
 - 解压 `tar -zxvf apache-tomcat-9.0.46.tar.gz`
 - 删除 **webapps** 文件夹下内容
+
 ### 禁用AJP连接
+
 - Tomcat 的 **conf/server.xml** 中配置了两种连接器。
   - HTTP Connector 拥有这个连接器，Tomcat才能成为一个web服务器，但还额外可处理Servlet和jsp。
     - 是其接收HTTP请求的关键模块, 可以通过它来指定IO处理模式, 指定处理该Connector接收到的请求的线程数, 以及其他常用的HTTP策略.
   - AJP Connector AJP连接器可以通过AJP协议和另一个web容器进行交互。
     - AJP(Apache JServer Protocol)是为 Tomcat 与 HTTP 服务器之间通信而定制的协议, 能提供较高的通信速度和效率.
     - 案例说明: AJP v13 协议是面向包的, Web服务器和Servlet容器通过TCP连接来交互, 为了节省 创建Socket的昂贵代价, Web服务器会尝试维护一个永久的TCP连接到Servlet容器, 并在多个请求与响应周期过程内重用该TCP连接.
-    - 一般情况下试用Tomcat + Nginx, 就需要注销掉该连接器，对我们用处不大，而且还有漏洞，发现新版tomcat8以后都默认注释了AJP配置。
+    - 一般情况下用Tomcat + Nginx，就需要注销掉该连接器，对我们用处不大，而且还有漏洞，发现新版tomcat8以后都默认注释了AJP配置。
 
 ```xml
 <!-- Define an AJP 1.3 Connector on port 8009 -->

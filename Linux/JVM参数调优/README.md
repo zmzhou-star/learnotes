@@ -1,3 +1,9 @@
+### JVM内存模型架构图
+
+![JVM8内存模型](imgs/JVM8-1.png)
+![JVM8内存模型](imgs/JVM8-2.png)
+![JVM8内存模型](imgs/JVM8-3.png)
+
 ### JVM参数配置方式
 参照服务器配置，对 JVM 进行参数优化。
 - 在 **bin/catalina.sh** 中修改 **JAVA_OPTS** 参数
