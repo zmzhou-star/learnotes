@@ -10,6 +10,7 @@
     - AJP(Apache JServer Protocol)是为 Tomcat 与 HTTP 服务器之间通信而定制的协议, 能提供较高的通信速度和效率.
     - 案例说明: AJP v13 协议是面向包的, Web服务器和Servlet容器通过TCP连接来交互, 为了节省 创建Socket的昂贵代价, Web服务器会尝试维护一个永久的TCP连接到Servlet容器, 并在多个请求与响应周期过程内重用该TCP连接.
     - 一般情况下试用Tomcat + Nginx, 就需要注销掉该连接器，对我们用处不大，而且还有漏洞，发现新版tomcat8以后都默认注释了AJP配置。
+
 ```xml
 <!-- Define an AJP 1.3 Connector on port 8009 -->
 <!--
@@ -19,6 +20,7 @@
            redirectPort="8443" />
 -->
 ```
+
 ### Tomcat的3种运行模式
 #### BIO - 同步阻塞IO模式
 - BIO, 同步阻塞IO, 性能低, 没有经过任何优化处理和支持.
@@ -39,11 +41,14 @@
 ### Tomcat的并发配置(配置Connector)
 #### 使用线程池处理请求
 - 自定义线程池配置
+
 ```xml
 <Executor name="tomcatThreadPool" namePrefix="catalina-exec-" maxIdleTime="60000"
         maxThreads="800" minSpareThreads="10" maxQueueSize="10000" prestartminSpareThreads="true"/>
 ```
+
 - 线程池参数说明
+
 ```text
 name: 线程池名称.
 namePrefix: 创建的每个线程的名称前缀, 单独的线程名称为 namePrefix + threadNumber.
@@ -59,12 +64,15 @@ className：线程池的实现类, 未指定情况下, 默认实现类为 org.ap
 ### 在Connector中使用线程池
 - **Connector** 是Tomcat接收请求的入口, 每个Connector都有自己专属的监听端口.
 - 自定义Connector配置
+
 ```xml
 <Connector executor="tomcatThreadPool" port="8080" protocol="org.apache.coyote.http11.Http11Nio2Protocol" 
            connectionTimeout="60000" redirectPort="8443" enableLookups="false" maxPostSize="-1" URIEncoding="UTF-8" 
 		   acceptCount="1000" acceptorThreadCount="2" disableUploadTimeout="true" maxConnections="10000" SSLEnabled="false"/>
 ```
+
 - Connector的参数说明
+
 ```text
 redirectPort="8443" # 基于SSL的端口, 在需要基于安全通道的场合, 比如当客户端的请求协议是HTTPS时, 将该请求转发到此端口.
 minSpareThreads="25" # Tomcat连接器的最小空闲Socket线程数, 默认值为25. 如果当前没有空闲线程, 且没有超过maxThreads, 将一次性创建的空闲线程数量. Tomcat初始化时创建的线程数量也是此值.
