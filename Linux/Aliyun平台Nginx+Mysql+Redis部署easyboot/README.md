@@ -75,7 +75,8 @@ quit;
 ![](imgs/mysql-change-passwd.png)
 
 ### 部署 easyboot 后台管理系统
-- 创建数据库和用户（只需创建数据库和用户，建表语句由flyway管理启动服务会自动执行）
+- 创建数据库和用户（只需创建数据库和用户，建表语句由flyway管理，启动服务会自动执行）
+
 ```mysql
 use mysql;
 -- 创建数据库
@@ -88,6 +89,7 @@ select host,user,authentication_string from mysql.user;
 -- 刷新权限，立即启用修改
 flush privileges;
 ```
+
 - git clone https://gitee.com/zmzhou-star/easyboot.git
 - 修改redis等配置文件
 - 打包
