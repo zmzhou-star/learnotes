@@ -31,7 +31,8 @@ JAVA8 里对 metaspace 可以在小范围自动扩展永生代避免溢出。
 - **-XX:NewSize=512m**：表示新生代初始内存的大小，应该小于 -Xms的值
 - **-XX:MaxNewSize=1024M**：表示新生代可被分配的内存的最大上限，应该小于 -Xmx的值
 - **-XX:PermSize=1024m**：设定内存的永久保存区域,内存的永久保存区域，VM 存放Class 和 Meta 信息，JVM在运行期间不会清除该区域
->程序加载很多class情况下，超出PermSize情况下：
+
+> 程序加载很多class情况下，超出PermSize情况下：
 > JDK1.7会抛出java.lang.OutOfMemoryError: PermGen space异常 
 > JDK1.8下会抛出 ERROR: java.lang.OutOfMemoryError: Metadata space 异常
 
@@ -91,9 +92,9 @@ export JAVA_HOME=/usr/java/jdk1.8.0_202
 - JVM Heap（堆）溢出
   - java.lang.OutOfMemoryError: Java heap space —-JVM Heap（堆）溢出
 
->JVM 在启动的时候会自动设置 JVM Heap 的值，其初始空间（即-Xms）是物理内存的1/64，最大空间（-Xmx）不可超过物理内存。可以利用 JVM提供的 -Xmn -Xms -Xmx 等选项可进行设置。Heap 的大小是 Young Generation 和 Tenured Generaion 之和。在 JVM 中如果 98％ 的时间是用于 GC，且可用的 Heap size 不足 2％ 的时候将抛出此异常信息。
+> JVM 在启动的时候会自动设置 JVM Heap 的值，其初始空间（即-Xms）是物理内存的1/64，最大空间（-Xmx）不可超过物理内存。可以利用 JVM提供的 -Xmn -Xms -Xmx 等选项可进行设置。Heap 的大小是 Young Generation 和 Tenured Generaion 之和。在 JVM 中如果 98％ 的时间是用于 GC，且可用的 Heap size 不足 2％ 的时候将抛出此异常信息。
 
->解决方法：手动设置 JVM Heap（堆）的大小。
+> 解决方法：手动设置 JVM Heap（堆）的大小。
 
 - PermGen space溢出
   - java.lang.OutOfMemoryError: PermGen space —- PermGen space溢出。
