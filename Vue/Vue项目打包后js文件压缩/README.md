@@ -29,7 +29,7 @@ npm install compression-webpack-plugin --save
 const CompressionPlugin = require('compression-webpack-plugin');
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
 module.exports = {
-  publicPath: './',
+  publicPath: '/',
   productionSourceMap: false,
   configureWebpack: {...},
   chainWebpack: config => {
