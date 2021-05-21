@@ -79,7 +79,7 @@ gzip_static on;
 gzip_min_length 1k;
 # 获取多少内存用于缓存压缩结果，‘4 16k’表示以16k*4为单位获得
 gzip_buffers 16 64K;
-# 识别http协议的版本,早起浏览器可能不支持gzip自解压,用户会看到乱码
+# 识别http协议的版本,早期浏览器可能不支持gzip自解压,用户会看到乱码
 gzip_http_version 1.1;
 # gzip压缩比（1~9），越小压缩效果越差，但是越大处理越慢，所以一般取中间值;
 gzip_comp_level 5;
