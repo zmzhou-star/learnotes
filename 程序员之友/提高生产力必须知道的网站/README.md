@@ -35,6 +35,7 @@
 - 下载您丢失的DLL文件 [https://cn.dll-files.com/](https://cn.dll-files.com/)
 - vue.js [https://v3.cn.vuejs.org/](https://v3.cn.vuejs.org/)
 - Vue CLI [https://cli.vuejs.org/zh/](https://cli.vuejs.org/zh/)
+- webpackjs中文文档 [https://www.webpackjs.com/](https://www.webpackjs.com/concepts/)
 - vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-ui实现。[https://panjiachen.gitee.io/vue-element-admin-site/zh/](https://panjiachen.gitee.io/vue-element-admin-site/zh/)
 - Element Plus [https://element-plus.gitee.io/#/zh-CN](https://element-plus.gitee.io/#/zh-CN)
 - electron-vue [https://simulatedgreg.gitbooks.io/electron-vue/content/cn/](https://simulatedgreg.gitbooks.io/electron-vue/content/cn/)

@@ -92,13 +92,24 @@ http {
     # 隐藏版本号的作用：通过你所用的版本，找其漏洞，进行攻击
     server_tokens off;
     add_header X-Frame-Options SAMEORIGIN;
+    # on为启用，off为关闭
     gzip  on;
+    # Nginx的动态压缩是对每个请求先压缩再输出，这样造成虚拟机浪费了很多cpu，解决这个问题可以利用nginx模块Gzip Precompression，这个模块的作用是对于需要压缩的文件，直接读取已经压缩好的文件(文件名为加.gz)，而不是动态压缩，对于不支持gzip的请求则读取原文件
+    gzip_static on;
+    # 设置允许压缩的页面最小字节数，页面字节数从header头中的Content-Length中进行获取。默认值是0，不管页面多大都压缩。建议设置成大于1k的字节数，小于1k可能会越压越大。
     gzip_min_length 1k;
+    # 获取多少内存用于缓存压缩结果，‘4 16k’表示以16k*4为单位获得
     gzip_buffers 16 64K;
+    # 识别http协议的版本,早起浏览器可能不支持gzip自解压,用户会看到乱码
     gzip_http_version 1.1;
-    gzip_comp_level 6;
+    # gzip压缩比（1~9），越小压缩效果越差，但是越大处理越慢，所以一般取中间值;
+    gzip_comp_level 5;
+    # 对特定的MIME类型生效,其中'text/html’被系统强制启用
     gzip_types text/plain application/x-javascript text/css application/xml application/javascript;
+    # 启用应答头"Vary: Accept-Encoding"
     gzip_vary on;
+    # IE5.5和IE6 SP1使用msie6参数来禁止gzip压缩 )指定哪些不需要gzip压缩的浏览器(将和User-Agents进行匹配),依赖于PCRE库
+    gzip_disable "MSIE [1-6].";
     #配置代理参数
     proxy_redirect off;
     proxy_set_header Host $host;

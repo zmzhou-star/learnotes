@@ -48,6 +48,7 @@
   
 - Vue
   - [Axios介绍以及拦截器的使用](/Vue/Axios介绍以及拦截器的使用/README.md)
+  - [Vue项目打包后js文件压缩](/Vue/Vue项目打包后js文件压缩/README.md)
   
 - 面试题(算法题)
   - [判断数组是否是相邻数组？](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/AdjacentArray.java ':include :type=code :ignore')
