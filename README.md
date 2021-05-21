@@ -10,6 +10,7 @@ Java全栈开发学习笔记，技术分享与交流；面试突击宝典，主�
 ## 微信公众号文章
 > 作者的个人微信公众号：[Java程序员ZZM](https://gitee.com/zmzhou-star/learnotes/raw/master/docs/wechat-zmzhou-star.png) 关注我不迷路
 
+- [Aliyun云服务器ECS平台部署Nginx+Mysql+Redis+Easyboot企业级前端管理系统](https://mp.weixin.qq.com/s/E6woXF5LaJ78a60gHaFyaw)
 - [设置Redis开机启动](https://mp.weixin.qq.com/s/9DVvr-tfsnhe5EU60Ys2Uw)
 - [Linux安装Redis，Windows安装Redis](https://mp.weixin.qq.com/s/wMD7JsW7nO9MNAfLoS3goQ)
 - [Keepalived + Nginx 实现高可用 Web 负载均衡](https://mp.weixin.qq.com/s/mb2Dpd5iKTkvZd22YoXegQ)
