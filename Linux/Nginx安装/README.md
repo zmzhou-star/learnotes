@@ -98,8 +98,8 @@ http {
     gzip_static on;
     # 设置允许压缩的页面最小字节数，页面字节数从header头中的Content-Length中进行获取。默认值是0，不管页面多大都压缩。建议设置成大于1k的字节数，小于1k可能会越压越大。
     gzip_min_length 1k;
-    # 获取多少内存用于缓存压缩结果，‘4 16k’表示以16k*4为单位获得
-    gzip_buffers 16 64K;
+    # 获取多少内存用于缓存压缩结果，‘4 32K’表示以32K*4为单位获得
+    gzip_buffers 4 32K;
     # 识别http协议的版本,早起浏览器可能不支持gzip自解压,用户会看到乱码
     gzip_http_version 1.1;
     # gzip压缩比（1~9），越小压缩效果越差，但是越大处理越慢，所以一般取中间值;
@@ -164,6 +164,7 @@ http {
         location / {
             root   html;
             index  index.html index.htm;
+            #try_files $uri $uri/ /index.html;
         }
         #location = / {
         #  rewrite ^/(.*)$ https://www.baidu.com/$1 break;
@@ -172,7 +173,14 @@ http {
         location /status {
             stub_status;
         }
-        #error_page  404              /404.html;
+        location /eboot {
+            proxy_pass http://127.0.0.1:8089/eboot;
+        }
+        error_page  404              /404.html;
+        location = /404.html {
+           # 放错误页面的目录路径。
+           root   html;
+        }
         # redirect server error pages to the static page /50x.html
         #
         error_page   500 502 503 504  /50x.html;
