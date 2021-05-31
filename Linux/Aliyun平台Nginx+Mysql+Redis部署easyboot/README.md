@@ -102,6 +102,7 @@ mvn clean install -X -Dmaven.test.skip=true -P prod
 #!bin/sh
 nohup java -jar -server easyboot-1.0.jar >/dev/null 2>&1 &
 ```
+
 - 值得注意的是阿里云服务器WAF防火墙不放行**25端口**，所以发邮件需要使用 **465端口** 或者 **587端口**，设置开启**ssl**
 ```yaml
 spring: 
