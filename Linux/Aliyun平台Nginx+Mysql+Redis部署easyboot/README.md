@@ -132,6 +132,7 @@ location = /404.html {
     root   html;
 }
 ```
+
 #### 部署vue前端
 - 打包
 ```shell
@@ -140,6 +141,7 @@ npm install --registry=https://registry.npm.taobao.org
 #构建生产环境
 npm run build:prod
 ```
+
 - 压缩上传 **dist** 文件夹下的文件到 nginx 的 **html** 文件夹下解压
 
 #### 浏览器地址栏访问：**http://120.78.87.244**
