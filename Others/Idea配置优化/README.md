@@ -63,10 +63,14 @@ $field.type ##
 ${name}##
 #end
 () {
+#if($field.date)
 if(null == this.$field.name){
- return null;
+    return null;
 }
-  return (Date) (this.$field.name).clone();
+return (Date) (this.$field.name).clone();
+#else
+return $field.name;
+#end
 }
 ```
 
