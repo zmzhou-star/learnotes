@@ -64,10 +64,7 @@ ${name}##
 #end
 () {
 #if($field.date)
-if(null == this.$field.name){
-    return null;
-}
-return (Date) (this.$field.name).clone();
+return java.util.Optional.ofNullable(this.$field.name).map(d -> (Date) (d).clone()).orElse(null);
 #else
 return $field.name;
 #end
@@ -92,7 +89,7 @@ void set$StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIde
     #end
   #end
 #if ($field.date)
-    $field.name = (${paramName} == null) ? null : (Date) ($paramName).clone();
+    $field.name = java.util.Optional.ofNullable($paramName).map(d -> (Date) (d).clone()).orElse(null);
 #else
     $field.name = $paramName;
 #end
@@ -106,17 +103,10 @@ void set$StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIde
 public class App {
   private Date createTime;
   public Date getCreateTime() {
-    if (null == this.createTime) {
-      return null;
-    }
-    return (Date) (this.createTime).clone();
+    return Optional.ofNullable(this.createTime).map(d -> (Date) (d).clone()).orElse(null);
   }
   public void setCreateTime(Date createTime) {
-    if (null == createTime) {
-      this.createTime = null;
-    } else {
-      this.createTime = (Date) (createTime).clone();
-    }
+    this.createTime = Optional.ofNullable(createTime).map(d -> (Date) (d).clone()).orElse(null);
   }
 }
 ```
