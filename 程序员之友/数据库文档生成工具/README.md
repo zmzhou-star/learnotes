@@ -4,6 +4,7 @@
 - 首先我们来看一下实现的效果
 [EasyBoot数据库设计文档](https://gitee.com/zmzhou-star/easyboot/blob/master/docs/EasyBoot%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3.md ':include :type=markdown')
 - 支持生成WORD、HTML和Markdown3种文档类型
+- 支持MySQL 、Oracle、 SqlServer、PostgreSQL、MariaDB等主流数据库
 
 ## 使用方式
 
@@ -146,3 +147,7 @@ public final class DBGenerationTool {
     }
 }
 ```
+
+### 执行代码，即可生成数据库设计文档
+
+[http://120.78.87.244/easyboot-database.html](http://120.78.87.244/easyboot-database.html)
