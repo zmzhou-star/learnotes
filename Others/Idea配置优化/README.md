@@ -103,10 +103,10 @@ void set$StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIde
 public class App {
   private Date createTime;
   public Date getCreateTime() {
-    return Optional.ofNullable(this.createTime).map(d -> (Date) (d).clone()).orElse(null);
+    return Optional.ofNullable(this.createTime).map(date -> (Date) (date).clone()).orElse(null);
   }
   public void setCreateTime(Date createTime) {
-    this.createTime = Optional.ofNullable(createTime).map(d -> (Date) (d).clone()).orElse(null);
+    this.createTime = Optional.ofNullable(createTime).map(date -> (Date) (date).clone()).orElse(null);
   }
 }
 ```
