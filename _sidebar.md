@@ -1,4 +1,7 @@
 - [**Java全栈开发学习笔记**](README.md)
+  
+- [华为招聘](/华为招聘/README.md)
+  
 - Git
   - [手把手教你搭建一个炫酷的GitHub-pages开源项目静态网站](Git/github-pages/README.md)
   - [Git常用命令速查手册](/Git/git-command/README.md)
