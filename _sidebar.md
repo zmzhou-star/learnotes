@@ -59,7 +59,7 @@
   - [求两个字符串最长公共字串的长度](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/LongestCommonStr.java ':include :ignore')
   - [求太阳能电池板最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxArea.java ':include :type=code')
   - [岛屿的最大面积](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/MaxAreaOfIsland.java ':include')
-  - [最小脏矩阵](华为招聘/最小脏矩阵/README.md)
+  - [最小脏矩阵](/华为招聘/最小脏矩阵/README.md)
 
 - 程序员之友-提高生产力
   - [提高生产力必须知道的网站](程序员之友/提高生产力必须知道的网站/README.md)
