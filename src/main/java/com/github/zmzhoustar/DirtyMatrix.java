@@ -32,7 +32,7 @@ import java.util.List;
 
 2 5 7
 
- 参考示意图：<a href='华为招聘/imgs/dirtyMatrix.png'></a>
+ 参考示意图：<a href='https://gitee.com/zmzhou-star/learnotes/blob/master/%E5%8D%8E%E4%B8%BA%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9C%80%E5%B0%8F%E8%84%8F%E7%9F%A9%E9%98%B5/dirtyMatrix.png'></a>
 
  * @author zmzhou
  * @version 1.0
