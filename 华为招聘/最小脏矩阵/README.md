@@ -26,7 +26,7 @@
 
 ### 解题
 
-[最小脏矩阵](/src/main/java/com/github/zmzhoustar/DirtyMatrix.java ':include')
+[最小脏矩阵](https://gitee.com/zmzhou-star/learnotes/raw/master/src/main/java/com/github/zmzhoustar/DirtyMatrix.java)
 
 ## 常见机考题
 1. 单词加密
