@@ -62,6 +62,15 @@ $ git clone https://gitee.com/zmzhou-star/learnotes.git
 ```shell
 git remote set-url origin https://github.com/zmzhou-star/learnotes.git
 ```
+
+> 添加（删除）多个远程仓库地址
+```shell
+git remote set-url origin https://github.com/zmzhou-star/learnotes.git
+git remote set-url --add origin https://gitee.com/zmzhou-star/learnotes.git
+# 删除
+git remote set-url --delete origin https://gitee.com/zmzhou-star/learnotes.git
+```
+
 > 增加/删除文件
 ```shell
 $ git add . #将当前目录所有文件添加到git暂存区
