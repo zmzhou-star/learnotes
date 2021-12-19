@@ -67,6 +67,7 @@
   - [数据库文档生成工具](程序员之友/数据库文档生成工具/README.md)
   
 - 其他
+  - [Apache Log4j 三连鞭](Others/Log4j/README.md)
   - [教你一行代码破解邻居家WiFi](Others/教你一行代码破解邻居家WiFi/README.md)
   - [怎么让你的U盘不再中毒？](Others/怎么让你的U盘不再中毒/README.md)
   - [Windows快捷键](/Others/Windows快捷键/README.md)
