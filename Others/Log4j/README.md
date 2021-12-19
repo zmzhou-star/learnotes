@@ -1,5 +1,7 @@
 ## Apache Log4j 三连鞭
-> 刚升级2.16.0又爆出安全漏洞：CVE-2021-45105 DOS（Denial of Service）拒绝服务攻击
+> 刚升级完2.16.0又爆出安全漏洞：CVE-2021-45105 DOS（Denial of Service）拒绝服务攻击
+
+> 还会不会有下一个漏洞呢？
 
 ![](imgs/CVE-2021-45105.png)
 
