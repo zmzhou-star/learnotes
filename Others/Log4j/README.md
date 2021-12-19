@@ -3,11 +3,11 @@
 
 > 还会不会有下一个漏洞呢？
 
-![](imgs/CVE-2021-45105.png)
+![CVE-2021-45105](imgs/CVE-2021-45105.png)
 
-![](imgs/CVE-2021-45046.png)
+![CVE-2021-45046](imgs/CVE-2021-45046.png)
 
-![](imgs/CVE-2021-44228.png)
+![CVE-2021-44228](imgs/CVE-2021-44228.png)
 
 ### 漏洞摘要
 Log4j 团队又获悉了一个重要的安全漏洞 CVE-2021-45105
@@ -43,6 +43,13 @@ $${ctx:loginId}
     <version>2.17.0</version>
 </dependency>
 ```
+
 ![](imgs/mvn-log4j-core.png)
 
 官网详情：https://logging.apache.org/log4j/2.x/
+
+官网代码仓库地址：[https://github.com/apache/logging-log4j2](https://github.com/apache/logging-log4j2)
+
+最近版本发布很频繁
+
+![log4j2-tags](imgs/Log4j2-tags.png)
